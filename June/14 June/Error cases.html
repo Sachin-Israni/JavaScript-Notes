@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Error Cases</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 1 
+
+        // var no1 = 10;
+        // {
+        //     console.log(no1)
+        //     var no1 = 12;
+        //     let no3 = 20;
+        // }
+        // console.log(no1)
+        // {
+        //     console.log(no3)  // ReferenceError
+        // }
+
+
+        // -----------------------------------------------------
+
+
+        // 2
+
+        // let name = 'sachin'
+        // console.log(name)
+        // {
+        //     name = 'sahil'
+        //     console.log(name1)  // ReferenceError
+        // }
+
+
+        // -----------------------------------------------------
+
+        // 3
+
+        //  no1 = 5;
+        // {
+        //     console.log(no1)
+        //     let no1;     //   RefrenceError  
+        // }
+
+
+        // -----------------------------------------------------
+
+        // 4
+
+        // var no2 = 10;
+        // console.log(no1)  // RefrenceError
+
+
+        // -----------------------------------------------------
+
+        // 5
+
+
+        // var var=10;
+        // var no2=20;
+        // {
+        //     console.log(var)  // Syntaxerror: unexpexted token 'var'
+        // }
+
+
+        // -----------------------------------------------------
+
+        // 6
+
+        // not=1
+        // console.log(not1)    // Undefined
+        // var not1;
+
+
+        // -----------------------------------------------------
+
+        // 7
+
+        // const not=1
+        // console.log(not)
+        // {
+        //     var not=3;    // SyntaxError: Identifier 'not' has already been declared
+        //     console.log(not)
+        // }
+
+
+        // -----------------------------------------------------
+
+        // 8
+
+        // let not=5;
+        // console.log(not)
+        // {
+        //  var not=10;    //  SyntaxError: Identifier 'not' has already been declared
+        //  console.log(not1)   //  RefrenceError
+        // }
+
+
+        // -----------------------------------------------------
+
+        // 9
+
+        // var not=2;
+        // var not=12;
+        // console.log(not)
+        // {
+        //     const not=10;
+        //     console.log(not)
+        // }
+        // const not=10;     // SyntaxError: Identifier 'not' has already been declared
+        // console.log(not)
+
+
+        // -----------------------------------------------------
+
+        // 10
+
+        // number=10;
+        // let number;   // ReferenceError: Cannot access 'number' before initialization
+        // console.log (number)  
+
+
+        // -----------------------------------------------------
+
+        // 11
+
+        // red=10;
+        // const red;    // SyntaxError: Missing initializer in const declaration
+        // console.log(red)
+
+
+        // -----------------------------------------------------
+
+        // 12
+       
+        // red=25;
+        // var red;
+        // console.log(red)
+
+        // -----------------------------------------------------
+
+        // 13
+
+        // num=12;
+        // num1=2;
+        // num2=10;
+        // num3;
+        // console.log(num,num1,num2,num3)  // Undefined
+
+
+        // -----------------------------------------------------
+
+        // 14
+
+       
+        // var const = 5;                       // SyntaxError: Unexpected token 'const'
+        // console.log(const);
+
+
+        // -----------------------------------------------------
+
+        // 15
+
+        // let const = 2;                       // SyntaxError: Unexpected token 'const'
+        // console.log(const);
+
+
+        // -----------------------------------------------------
+
+        // 16
+
+        // var not;
+        // not = 5;
+        // {
+        //     console.log(not);
+        //     not2 = 10;
+        //     console.log(not1); // ReferenceError: not1 is not defined
+        // }
+        //  console.log(not);
+
+
+        // -----------------------------------------------------
+
+        // 17
+
+        // var note;  // undefined
+        // {
+        // console.log(note);
+        // note = 5;
+        // }
+
+
+        // -----------------------------------------------------
+
+        // 18
+
+        // let price;
+        // {
+        //     console.log(price);  // Undefined
+        //     price = 20;
+        // }
+
+
+        // -----------------------------------------------------
+
+        // 19
+
+        // const count;                 // SyntaxError: Missing initializer in const declaration
+        // count = 2;
+        // console.log(count);
+
+
+        // -----------------------------------------------------
+
+        // 20
+
+        // const count = 4;             // SyntaxError: Identifier 'count' has already been declared
+        // const count; 
+        // count = 2;
+        // console.log(count);
+
+
+
+        // -----------------------------------------------------
+
+        // 21
+
+        // const price = 10;           //TypeError: Assignment to constant variable.
+        // price = 20;
+        // {
+        //     console.log(price);
+        // }
+
+
+        // -----------------------------------------------------
+
+        // 22
+
+        // let not=10;   // SyntaxError: Identifier 'not' has already been declared
+        // const not=10;
+        // console.log(not)
+
+
+        // -----------------------------------------------------
+
+        // 23
+        
+        // let number;
+        // console.log(number);   // Undefined
+        
+        
+        // -----------------------------------------------------
+
+        // 24
+
+        // let sachin;
+        // console.log(sachin) // Undefined
+
+
+        // -----------------------------------------------------
+
+        // 25
+
+        // const sachin=20;
+        // console.log(sachin)
+        //      {
+        //          let sachin=30;
+        //          console.log(sachin)
+        //          const sachin=2;   // SyntaxError: Identifier 'sachin' has already been declared
+        //          console.log(sachin)
+        //      }
+
+    </script>
+</body>
+
+</html>
