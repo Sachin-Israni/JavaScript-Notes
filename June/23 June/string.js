@@ -206,15 +206,16 @@
 // console.log(is_string([1, 2, 4, 0])); // false
 
 
-// function is_Blank(str) {                                                // Question 61
-//     if(str===''){
-//         return true;
-//     }
-//     else return false;
-// }
+function is_Blank(str) {                                                // Question 61
+    if(str.trim()===''){
+        
+        return true;
+    }
+    else return false;
+}
 
-// console.log(is_Blank('')); // true
-// console.log(is_Blank('abc')); // false
+console.log(is_Blank('')); // true
+console.log(is_Blank('abc')); // false
 
 
 function string_to_array(input) {                                   // Question 62
