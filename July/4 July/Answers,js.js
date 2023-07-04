@@ -228,25 +228,25 @@
 
 // -------------------- Question 14
 
-// const names = ["Jeel", "Prakhar", "Bhakti", "Vansh", "Meghna", "Bhaumik", "Pujan", "Rudra", "Sachin", "Dhruval"];
+const names = ["Jeel", "Prakhar", "Bhakti", "Vansh", "Meghna", "Bhaumik", "Pujan", "Rudra", "Sachin", "Dhruval"];
 
-// function firstLetterGroupData(data) {
-//     const groupData = {};
+function firstLetterGroupData(data) {
+    const groupData = {};
 
-//     let b = data.map((val, i, arr) => {
-//         const name = data[i];
-//         const firstLetter = name[0];
+    let b = data.map((val, i, arr) => {
+        const name = data[i];
+        const firstLetter = name[0];
 
-//         if (groupData[firstLetter]) {
-//             groupData[firstLetter].push(name);
-//         } else {
-//             groupData[firstLetter] = [name];
-//         }
-//     })
+        if (groupData[firstLetter]) {
+            groupData[firstLetter].push(name);
+        } else {
+            groupData[firstLetter] = [name];
+        }
+    })
 
 
-//     return groupData;
-// }
+    return groupData;
+}
 
 // function firstLetterGroupData(data) {
 //     const groupData = {};
@@ -266,9 +266,9 @@
 // return groupData;
 // }
 
-// const groupNames = firstLetterGroupData(names);
+const groupNames = firstLetterGroupData(names);
 
-// console.log(groupNames);
+console.log(groupNames);
 
 
 // ----------------------------------------- Question 15
