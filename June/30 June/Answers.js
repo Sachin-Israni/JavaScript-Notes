@@ -1,4 +1,4 @@
-// Write a code that adds new key in each object named
+// Write a code that adds new key in each object named           // Question 1
 // full_name: first_name + last_name
 
 // const names = [
@@ -17,7 +17,7 @@
 // console.log(names);
 
 
-//    Write a code that adds new key in each object named: isMature
+//    Write a code that adds new key in each object named: isMature     // Question 2
 
 
 // const users = [
@@ -45,11 +45,11 @@
 
 
 
-// let arr = [1,2,3,5]
+// let arr = [1,2,3,5]                              // Question 3
 // console.log(arr[-1]); //?
 
 
-//   => print all items of nested array
+//   => print all items of nested array             // Question 4
 
 // const nestedArray = [
 //     [1, 2, 3],
@@ -67,7 +67,7 @@
 // console.log(a);
 
 
-//  => print all items of this object in line
+//  => print all items of this object in line                   // Question 5
 //  //Output:
 //  Vishal Kukreja
 // 32
@@ -89,6 +89,36 @@
 //     hobbies: ["reading", "drawing", "gardening"],
 // };
 
+
+// function singleString(obj) {
+//     if (typeof obj != 'object') {
+//         console.log(obj);
+//     } else {
+//         for (let key in obj) {
+//             singleString(obj[key]);
+//         }
+//     }
+// }
+// singleString(nestedObject);
+
+// for (let value in nestedObject) {
+//     if (Array.isArray(nestedObject[value])) {
+//             for (let i = 0; i < nestedObject[value].length; i++) {
+//                     console.log(nestedObject[value][i]);
+//                 }
+//             } 
+//             else if (typeof nestedObject[value] === 'object') {
+//                     for (let second in nestedObject[value]) {
+//                             console.log(nestedObject[value][second]);
+//         }
+//     } 
+//     else{
+//             console.log(nestedObject[value]);
+//         }
+// }
+
+
+
 // for(let keys in nestedObject){
 //     console.log(nestedObject.values);
 // }
@@ -105,10 +135,6 @@
 // let a = value =() => String(value)
 // let b=arr.map(a)
 // console.log(b);
-
-
-
-
 
 
 
@@ -139,38 +165,119 @@
 // input = "Every developer likes to mix kubernetes and javascript";
 // output = "E3y d7r l3s to mix k8s and j8t"
 
-function first1last(name) {
-    let a = name.split(' ')
-    return a;
-}
+// function first1last(name) {
+//     let a = name.split(' ')
+//     return a;
+// }
 
-console.log(first1last('This is not a necessary game'));
+// console.log(first1last('This is not a necessary game'));
 
 
 // -------------------------------------------- Question 12
 
-const products = [
-    { name: "Product 1", price: 20, category: "Electronics" },
-    { name: "Product 2", price: 30, category: "Clothes" },
-    { name: "Product 3", price: 40, category: "Electronics" },
-    { name: "Product 4", price: 50, category: "Clothes" },
-    { name: "Product 5", price: 60, category: "Clothes" },
-    { name: "Product 6", price: 70, category: "Electronics" },
-    { name: "Product 7", price: 80, category: "Clothes" },
-    { name: "Product 8", price: 90, category: "Electronics" },
-];
+// const products = [
+//     { name: "Product 1", price: 20, category: "Electronics" },
+//     { name: "Product 2", price: 30, category: "Clothes" },
+//     { name: "Product 3", price: 40, category: "Electronics" },
+//     { name: "Product 4", price: 50, category: "Clothes" },
+//     { name: "Product 5", price: 60, category: "Clothes" },
+//     { name: "Product 6", price: 70, category: "Electronics" },
+//     { name: "Product 7", price: 80, category: "Clothes" },
+//     { name: "Product 8", price: 90, category: "Electronics" },
+// ];
 
 
 
-function makeNewObject(arrayName) {
-    let newObject = {};
-    let Clothes = arrayName.filter(value => value.category == "Clothes");
-    let Electronics = arrayName.filter(value => value.category == "Electronics");
-    let a = Clothes.length;
-    let b = Electronics.length;
-    newObject.Clothes = a;
-    newObject.Electronics = b;
-    return newObject;
-}
-let newObj = makeNewObject(products);
-console.log(newObj);
+// function makeNewObject(arrayName) {
+//     let newObject = {};
+//     let Clothes = arrayName.filter(value => value.category == "Clothes");
+//     let Electronics = arrayName.filter(value => value.category == "Electronics");
+//     let a = Clothes.length;
+//     let b = Electronics.length;
+//     newObject.Clothes = a;
+//     newObject.Electronics = b;
+//     return newObject;
+// }
+// let newObj = makeNewObject(products);
+// console.log(newObj);
+
+
+// function averagePrice(products) {
+//     let a = 0;
+//     let b = 0;
+//     let c = 0;
+//     let d = 0;
+//     for (let i = 0; i < products.length; i++) {
+//         if (products[i].category == "Clothes") {
+//             a += products[i].price;
+//             b++;
+//         } else if (products[i].category == "Electronics") {
+//             c += products[i].price;
+//             d++;
+//         }
+//     }
+//     return { Clothes: a / b, Electronics: c / d }
+// }
+// let filterObj = averagePrice(products);
+// console.log(filterObj);
+
+// -------------------------------------------- Question 13
+
+// const employees = [
+//     { name: "John", salary: 50000, department: "IT" },
+//     { name: "Jane", salary: 60000, department: "HR" },
+//     { name: "Bob", salary: 55000, department: "IT" },
+//     { name: "Sophie", salary: 75000, department: "HR" },
+//     { name: "Mike", salary: 65000, department: "IT" },
+//     { name: "Emily", salary: 80000, department: "HR" },
+//     { name: "David", salary: 70000, department: "IT" },
+// ];
+
+// Que1: => count the average salary of each department
+//   Que 2: => output: {
+//     IT: [50000, 55000, 65000, 70000],
+//         HR: [60000, 75000, 80000]
+// }
+
+// --- 1
+
+// function avgSalary(arr) {
+//     let a = 0;
+//     let b = 0;
+//     let c = 0;
+//     let d = 0;
+
+//     for (let i = 0; i < employees.length ; i++) {
+//         if (arr[i].department == "IT") {
+//             a += arr[i].salary
+//             b++
+//         }
+//         else if (arr[i].department == "HR") {
+//             c += arr[i].salary
+//             d++
+//         }
+//     }
+//     return { IT: a / b, HR: c / d }
+// }
+
+// console.log(avgSalary(employees));
+
+
+// --- 2
+
+// function totalDepartSalary(arr) {
+//     let a=[];
+//     let b=[];
+//     for (let i = 0; i < arr.length ; i++){
+//         if(arr[i].department == "IT"){
+//             a.push(arr[i].salary)
+//         }
+//         else if(arr[i].department == "HR"){
+//             b.push(arr[i].salary)
+//         }
+//     }
+//     return {IT : a , HR : b}
+// }
+
+// let as=totalDepartSalary(employees)
+// console.log(as);
