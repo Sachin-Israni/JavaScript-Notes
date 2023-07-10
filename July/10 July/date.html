@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="time"></p>
+    <script>
+        setInterval(updateTime, 1000)
+        // var moment = require('moment')
+        function updateTime() {
+
+            // let a = moment().format('MMMM Do YYYY, h:mm:ss a'); // July 10th 2023, 5:16:01 pm
+            // console.log(a);
+            time.innerHTML = new Date();
+        }
+    </script>
+</body>
+
+
+
+</html>
