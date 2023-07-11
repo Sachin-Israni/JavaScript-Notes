@@ -5,18 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:aqua;
+        }
+        div{
+            background-color: goldenrod;
+            padding: 50px;
+        }
+        span{
+            padding: 20px;
+            font-size: 70px;
+            background-color: red;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <p id="time"></p>
+    <div>
+        <span id="hh"></span>
+        <span id="mm"></span>
+        <span id="ss"></span>
+        <span id="ms"></span>
+    </div>
     <script>
-        setInterval(updateTime, 1000)
-        // var moment = require('moment')
+        setInterval(updateTime)
         function updateTime() {
-
-            // let a = moment().format('MMMM Do YYYY, h:mm:ss a'); // July 10th 2023, 5:16:01 pm
-            // console.log(a);
-            time.innerHTML = new Date();
+            let a = new Date()
+            hh.innerHTML = a.getHours();
+            mm.innerHTML = a.getMinutes();
+            ss.innerHTML = a.getSeconds()
+            ms.innerHTML = a.getMilliseconds()
         }
     </script>
 </body>
