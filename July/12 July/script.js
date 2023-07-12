@@ -256,4 +256,69 @@
 // // calculateYourAge('25 Oct 2004')
 
 
+// ----------------------------- After Break
 
+// -------------------------  isNaN()
+
+
+// console.log(Number.isNaN('2'));
+// console.log(isNaN(2));
+// console.log(Number.isNaN('Sachin'));
+// console.log(isNaN('Sachin'));
+// console.log(isNaN(null));
+// console.log(isNaN(undefined));
+// console.log(isNaN(function (item) {
+//     return item = "Sa"
+// }));
+
+
+// ---------------------------------  Total Sunday function()
+
+// function sunday(year) {
+//     let a = new Date(year, 0, 1)
+//     let b = new Date(year, 11, 31)
+//     let count = 0;
+//     for (i = a.getTime(); i <= b.getTime(); a.setTime(i += 86400000)) {
+//         if (a.getDay() == 0) {
+//             count++
+//         }
+//     }
+//     return count;
+// }
+
+// console.log(sunday(2002))
+
+
+// function totalWorkingDaysInYear(year) {
+//     let date = new Date(year, 1);
+//     for (let i = 1; i <= 100; i++) {
+//         date.setDate(i);
+//         console.log(i);
+//         console.log(date);
+//     }
+//     // console.log(date);
+// }
+// totalWorkingDaysInYear(2023)
+
+// ---------------------- totalWorkingDaysInYear
+
+// function totalWorkingDaysInYear(year) {
+//     let totalWorkingDays = 0;
+//     for (let month = 0; month < 12; month++) {
+//         for (let day = 1; day <= 31; day++) {
+//             let date = new Date(year, month, day);
+//             if (date.getFullYear() === year && date.getMonth() === month && isWorkingDay(date)) {
+//                 totalWorkingDays++;
+//                 // console.log(month , day , year);
+//             }
+//         }
+//     }
+//     return totalWorkingDays;
+// }
+
+// function isWorkingDay(date) {
+//     const dayOfWeek = date.getDay();
+//     return dayOfWeek !== 0 && dayOfWeek !== 6; // Exclude Sunday (0) and Saturday (6)
+// }
+
+// console.log(totalWorkingDaysInYear(2023)); // Output: Total working days in 2023 = 260
