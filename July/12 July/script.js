@@ -164,3 +164,96 @@
 // console.log(num11);  // 123.45
 // console.log(typeof num11);  //  number
 
+
+// -------------------------  After Lunch
+
+
+// -------------------------  isFinite()
+
+// console.log(isFinite(1/0));     // false
+// console.log(isFinite(20939304));    // true
+// console.log(isFinite("20939304"));    // true
+// console.log(isFinite(Infinity));    // false
+// console.log(isFinite(isFinite));  // false
+// console.log(isFinite(isFinite(123)));  // true
+// console.log(isFinite(isFinite()));  // true
+// console.log(isFinite("abs"));  // false
+// console.log(isFinite(NaN));  // false
+// console.log(isFinite(null));  // true
+// console.log(isFinite(undefined));  // false
+// var obj={
+//     age:12
+// }
+// console.log(isFinite(obj));  // false
+// console.log(isFinite(obj.age));  // true
+
+// -------------------------  Number.isInteger()
+
+// let a = 12
+// console.log(Number.isInteger(a));
+
+// console.log(Number.isInteger(2));  // true
+// console.log(Number.isInteger(2.23));  // false
+// console.log(Number.isInteger("2"));  // false
+// console.log(Number.isInteger("ads"));  // false
+// console.log(Number.isInteger(obj));  // false
+// console.log(Number.isInteger(obj.age));  // true
+// Number.isInteger(5.0000000000000001); // true, because of loss of precision             // Doubt
+// Number.isInteger(4500000000000000.1); // true, because of loss of precision             // Doubt
+
+
+
+// let a = new Date(1517356800000)
+// // let a = new Date(-62167240407001)
+// console.log(a); //Sat Jan 01 0000 00:00:00 GMT+0553 (India Standard Time)
+// console.log(a.toString()); //Sat Jan 01 0000 00:00:00 GMT+0553 (India Standard Time)
+
+
+// console.log((15500.3).toPrecision(2));
+
+
+
+// function sumFiniteNumbers(...numbers) {
+//     for (let number of numbers) {
+//         if (!Number.isFinite(number)) {
+//             return false
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(sumFiniteNumbers(1, 2, 3, 5, 4)); // 10
+// console.log(sumFiniteNumbers(1, 2, -Infinity, NaN, 4)); // 7
+
+
+// function checkIntegers(...values) {
+//     for (let value of values) {
+//         if (!Number.isInteger(value)) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(checkIntegers(1, 2, 3, 4)); // true
+// console.log(checkIntegers(1, 2, 3.5, 4)); // false
+// console.log(checkIntegers(1, 2, "3", 4)); // false
+
+
+
+
+
+// function calculateYourAge(dob) {
+//     let a = new Date()
+//     let mainBod = new Date(dob)
+//     let ret = a.getFullYear() - mainBod.getFullYear()
+//     console.log(a.getFullYear());
+//     console.log(mainBod.getFullYear());
+//     console.log(mainBod.getMonth());
+//     console.log(ret);
+// }
+// calculateYourAge(25, 10, 2004)
+// // calculateYourAge('25 Oct 2004')
+
+
+
