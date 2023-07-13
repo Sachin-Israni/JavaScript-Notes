@@ -43,10 +43,57 @@
 // console.log(Math.abs([1]));     // 1
 // console.log(Math.abs());        // NaN
 
-document.body.style.background = "red"
+// document.body.style.background = "red"
 
-var h1 = document.getElementById('h1')
-h1.textContent = "Harry";
-h1.innerText = "Red";
-h1.innerHTML = "<p>Jai Ho</p>";
-h1.style.borderBottom='2px solid aqua'
+//----------------------------------------------------- getElementByID
+
+// var h1 = document.getElementById('h1')      
+// h1.textContent = "Harry";
+// h1.innerText = "Red";
+// h1.innerHTML = "<p>Jai Ho</p>";
+// h1.style.borderBottom = '2px solid aqua'
+
+//----------------------------------------------------- getElementsByTagName
+
+// var h1 = document.getElementsByTagName('h1')
+// h1[0].textContent = 'Radhey Rahdey';
+// h1[0].style.color = 'white'
+
+
+//----------------------------------------------------- getElementsByClassName
+
+// var p = document.getElementsByClassName('p')
+// for (let i = 0; i < p.length; i++) {
+//     p[i].textContent = "This text is changed by getElementsByClassName  "
+// }
+
+//----------------------------------------------------- querySelector
+
+// var p = document.querySelector('p:nth-last-child(2)')
+// p.textContent = 'Sachin'
+// p.style.color = 'white'
+
+
+
+
+//----------------------------------------------------- querySelectorAll
+
+// var ad = document.querySelectorAll('p')
+// ad[0].textContent='Sachin'
+// ad[0].style.color='white'
+// ad[1].style.color='white'
+
+// for (let i = 0; i < ad.length; i++) {
+//     ad[i].style.background = 'grey'
+
+// }
+
+
+// function green() {
+//     document.getElementById('as').style.background='black'
+//     document.getElementById('s').style.background='grey'
+// }
+// function grey() {
+//     document.getElementById('as').style.background='grey'    
+//     document.getElementById('s').style.background='black'    
+// }
