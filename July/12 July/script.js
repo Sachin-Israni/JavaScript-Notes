@@ -32,7 +32,9 @@
 //         DD: a.getDate(),
 //         MM: a.getMonth() + 1
 //     }
-//     type = type.replaceAll(" ", "")
+//     if (typeof type == 'string') {
+//         type = type.replaceAll(" ", "")
+//     }
 //     if (type == "YYYY-DD-MM") console.log(obj.YYYY + "-" + obj.DD + "-" + obj.MM);
 //     if (type == "YYYY-MM-DD") console.log(obj.YYYY + "-" + obj.MM + "-" + obj.DD);
 //     if (type == "DD-MM-YYYY") console.log(obj.DD + "-" + obj.MM + "-" + obj.YYYY);
@@ -45,9 +47,10 @@
 //     if (type == "DD/YYYY/MM") console.log(obj.DD + "/" + obj.YYYY + "/" + obj.MM);
 //     if (type == "MM/YYYY/DD") console.log(obj.MM + "/" + obj.YYYY + "/" + obj.DD);
 //     if (type == "MM/DD/YYYY") console.log(obj.MM + "/" + obj.DD + "/" + obj.YYYY);
+//     else console.log(obj.DD + "-" + obj.MM + "-" + obj.YYYY);
 // }
 
-// transformation("YYYY-DD-MM")
+// transformation()
 // transformation("YYYY-MM-DD")
 // transformation("DD-MM-YYYY")
 // transformation("DD-YYYY-MM")
@@ -68,7 +71,9 @@
 //         DD: a.getDate(),
 //         MM: a.getMonth() + 1
 //     }
-//     type = type.replaceAll(" ", "")
+//     if (typeof type == 'string') {
+//         type = type.replaceAll(" ", "")
+//     }
 //     switch (type) {
 //         case "YYYY-DD-MM": console.log(obj.YYYY + "-" + obj.DD + "-" + obj.MM); break;
 //         case "YYYY-MM-DD": console.log(obj.YYYY + "-" + obj.MM + "-" + obj.DD); break;
@@ -87,7 +92,7 @@
 //     }
 // }
 
-// transformation("YYYY-DD-MM")
+// transformation()
 // transformation("YYYY-MM-DD")
 // transformation("DD-MM-YYYY")
 // transformation("DD-YYYY-MM")
@@ -101,7 +106,7 @@
 // transformation("MM/DD/YYYY")
 
 
-// -------------- 
+// --------------
 
 // function num(type) {
 //     return type
@@ -129,7 +134,7 @@
 
 // -------------- parseInt()
 
-// let num4 = parseInt("123"); 
+// let num4 = parseInt("123");
 // console.log(num4);  // 123
 // console.log(typeof num4);  //  number
 
@@ -137,7 +142,7 @@
 // console.log(num5);  //  12
 // console.log(typeof num5);  // number
 
-// let num6 = parseInt("hello"); 
+// let num6 = parseInt("hello");
 // console.log(num6);  //  NaN
 // console.log(typeof num6);  // Output: number
 
@@ -148,7 +153,7 @@
 
 // -------------- parseFloat()
 
-// let num8 = parseFloat("123"); 
+// let num8 = parseFloat("123");
 // console.log(num8);  //  123
 // console.log(typeof num8);  //  number
 
@@ -156,7 +161,7 @@
 // console.log(num9);  // 12.34
 // console.log(typeof num9);  //  number
 
-// let num10 = parseFloat("hello"); 
+// let num10 = parseFloat("hello");
 // console.log(num10);  //  NaN
 // console.log(typeof num10);  //  number
 
