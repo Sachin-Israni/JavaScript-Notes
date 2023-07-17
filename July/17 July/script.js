@@ -34,3 +34,19 @@
 //     }
 // }
 
+
+// -------------------------------------------------- mouseover / mouseout
+
+
+// document.getElementById('para').addEventListener('mouseover', function () {
+//     alert('Hello')
+// });
+// document.getElementById('para').addEventListener('mouseover', function () {
+//     this.style.color = 'red';
+// });
+// document.getElementById('para').addEventListener('mouseout', function () {
+//     this.style.color = 'aqua';
+//     document.body.style.backgroundColor = 'green'
+// });
+
+// --------------------------------------------------

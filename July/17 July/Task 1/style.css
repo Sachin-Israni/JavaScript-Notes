@@ -1,8 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blueviolet;
+    color: white;
+}
+
 .navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(149, 43, 149);
+    padding: 20px 10px;
 }
 
 .nav-list {
@@ -14,10 +27,12 @@
 a {
     color: black;
     text-decoration: none;
+    padding: 10px;
 }
 
 .active {
-    background-color: red;
+    background-color: rgb(255, 85, 201);
+    color: #fff;
 }
 
 #fa {
@@ -25,12 +40,13 @@ a {
 }
 
 @media (max-width:450px) {
-    .nav-list ,
-    .letgo{
+
+    .nav-list,
+    .letgo {
         display: none;
     }
 
     #fa {
-        display:block;
+        display: block;
     }
 }
