@@ -56,24 +56,27 @@
 //--------------------------------------------------- 
 
 // const a = [1, 2, 3, 4, 5]
-// const b = [
-//     { id: 2, name: 'hi' },
-//     { id: 3, name: 'hi' },
-//     { id: 1 },
-//     { id: 4, name: 'hi' },
-//     { id: 20, name: 'hi' },
-//     { id: 20, name: 'hi' },
-// ]
+const a = [{id:1},{id:2}]
+const b = [
+    { id: 2, name: 'hi' },
+    { id: 3, name: 'hi' },
+    { id: 1 },
+    { id: 4, name: 'hi' },
+    { id: 20, name: 'hi' },
+    { id: 20, name: 'hi' },
+]
 
 // const c = b.filter(ele => {
 //     if (!a.includes(ele.id)){
 //         return ele.id
 //     }
 // })
-// const c = b.filter(ele => !a.includes(ele.id))
+const num=a.map(ele=>ele.id)
+console.log(num);
+const c = b.filter(ele => !num.includes(ele.id))
 // const c = b.filter(ele => a.includes(ele.id))
 
-// console.log(c);
+console.log(c);
 
 //--------------------------------------------------- 
 
@@ -117,15 +120,15 @@
 
 // [2, 4, 8, 16, 32]
 
-function factorArr(arr) {
-    return arr.every((val, i, arr) => {
-        if (arr[i+1] == undefined) {
+// function factorArr(arr) {
+//     return arr.every((val, i, arr) => {
+//         if (arr[i+1] == undefined) {
             
-        }
-        else {
-            arr[i + 1] == arr[i] * 2
-        }
-    })
-}
-let arr = [2, 4, 8, 16, 32]
-console.log(factorArr(arr));
+//         }
+//         else {
+//             arr[i + 1] == arr[i] * 2
+//         }
+//     })
+// }
+// let arr = [2, 4, 8, 16, 32]
+// console.log(factorArr(arr));

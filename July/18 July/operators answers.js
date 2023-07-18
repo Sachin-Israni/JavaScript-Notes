@@ -217,6 +217,3 @@ b=25;
 c=240;
 let max = (a > b)  ? ((a>c)? "A is big": "C is big" ) : ((b>c) ?"B is big":"C is Big" )
 console.log(max);
-
-
-

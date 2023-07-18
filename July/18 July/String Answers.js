@@ -214,15 +214,26 @@ console.log(str.length);
 // console.log(capitalize_Words('js string exercises'));
 // "Js String Exercises"
 
+
+// -------------------------------------------- 68
+
 // Write a JavaScript function to insert a string within a string at a particular position (default is 1).
-// Test Data :
+
+
+
+
+
 // console.log(insert('We are doing some exercises.'));
 // console.log(insert('We are doing some exercises.','JavaScript '));
 // console.log(insert('We are doing some exercises.','JavaScript ',18));
 // Output: "We are doing some exercises."
 // "JavaScript We are doing some exercises."
 // "We are doing some JavaScript exercises.”
+
+
+// -------------------------------------------- 69
+
 //  What is the output of the following code?
 // let text = "Apple, Banana, Kiwi";
-// text.slice(-12, -6);
-// console.log(text);
+// text.slice(-12, -6); // unmutable
+// console.log(text);   Apple, Banana, Kiwi
