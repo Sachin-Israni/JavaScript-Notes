@@ -1,8 +1,8 @@
 // -------------------------------------------- 1
 // Which string method is used to determine the length of a string?
 
-let str='Sachin'
-console.log(str.length);
+// let str = 'Sachin'
+// console.log(str.length);
 
 // -------------------------------------------- 2
 // How would you convert a string to uppercase using a string method?
@@ -220,11 +220,13 @@ console.log(str.length);
 // Write a JavaScript function to insert a string within a string at a particular position (default is 1).
 
 
-
+function insert(str, str2, num = 0) {
+    
+}
 
 
 // console.log(insert('We are doing some exercises.'));
-// console.log(insert('We are doing some exercises.','JavaScript '));
+console.log(insert('We are doing some exercises.','JavaScript '));
 // console.log(insert('We are doing some exercises.','JavaScript ',18));
 // Output: "We are doing some exercises."
 // "JavaScript We are doing some exercises."

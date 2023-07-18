@@ -133,14 +133,14 @@ console.log(isPower(2, 512))
 // console.log(typeof a);
 // console.log(typeof b);
 
-// function abc(a,b) {
-//     function a(){
-//         return a
-//     }
-//     function b() {
-//         return b
-//     }
-//     return a()+b()
-// }
+function abc(a,b) {
+    function a(){
+        return a
+    }
+    function b() {
+        return b
+    }
+    return a()+b()
+}
 
-// console.log(abc());
+console.log(abc());

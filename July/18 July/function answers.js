@@ -6,6 +6,7 @@ function sayHello() {
     console.log('Hey,there!');    
 }
 sayHello()
+sayHello('sa')
 
 //----------------------------------------2
 

@@ -67,23 +67,23 @@ console.log(a); // Sachin
 
 // ----------------------------- function for uncamelized
 
-// function insert(str, separation = ' ') {
+function insert(str, separation = ' ') {
 
-//     let sp = str.split('').map((ele, i, arr) => {
-//         if (i == 0) {
-//             return ele
-//         }
-//         else if (ele == ele.toUpperCase()) {
-//             return separation + ele.toLowerCase()
-//         }
-//         else {
-//             return ele
-//         }
-//     }).join('')
+    let sp = str.split('').map((ele, i, arr) => {
+        if (i == 0) {
+            return ele
+        }
+        else if (ele == ele.toUpperCase()) {
+            return separation + ele.toLowerCase()
+        }
+        else {
+            return ele
+        }
+    }).join('')
 
-//     console.log(sp);
-// }
-// insert('DchinIsraniPujanJani')
-// insert('SachinIsraniPujanJani', '-')
-// insert('SachinIsraniPujanJani', '_')
+    console.log(sp);
+}
+insert('DchinIsraniPujanJani')
+insert('SachinIsraniPujanJani', '-')
+insert('SachinIsraniPujanJani', '_')
 

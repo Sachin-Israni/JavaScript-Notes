@@ -1,4 +1,4 @@
-console.log(5 + 4 * 2); // Question 1
+// console.log(5 + 4 * 2); // Question 1
 
 console.log(10 - 2 / 4); // Question 2  
 
