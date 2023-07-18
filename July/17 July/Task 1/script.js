@@ -120,7 +120,7 @@
 function factorArr(arr) {
     return arr.every((val, i, arr) => {
         if (arr[i+1] == undefined) {
-            break
+            
         }
         else {
             arr[i + 1] == arr[i] * 2
