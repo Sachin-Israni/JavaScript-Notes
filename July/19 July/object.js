@@ -46,11 +46,11 @@
 
 // ------------------------------------------------------
 
-const source = { a: { b: 1 } };
-const target = {};
-Object.assign(target, JSON.parse(JSON.stringify(source)));
-source.a.b = 2;
-console.log(target);
+// const source = { a: { b: 1 } };
+// const target = {};
+// Object.assign(target, JSON.parse(JSON.stringify(source)));
+// source.a.b = 2;
+// console.log(target);
 
 // ------------------------------------------------------
 
@@ -58,16 +58,23 @@ console.log(target);
 // const target = Object.assign({}, source);
 // delete target.a;
 // console.log(source);
+// console.log(target);
+
+// ------------------------------------------------------
 
 // const target = { a: 1 };
 // const source = { b: 2 };
 // const result = Object.assign(target, source);
 // console.log(result === source);
 
+// ------------------------------------------------------
+
 // const target = { a: 1 };
 // const source = { b: 2 };
 // const result = Object.assign(target, source);
 // console.log(result === { a: 1, b: 2 });
+
+// ------------------------------------------------------
 
 // const target = { a: 1 };
 // const source = { b: 2 };
@@ -75,23 +82,30 @@ console.log(target);
 // target.b = 234;
 // console.log(source);
 
+// ------------------------------------------------------
+
 // const target = {};
 // const source = { a: 1 };
 // const result = Object.assign(target, source);
 // source.a = 2;
 // console.log(result);
 
+// ------------------------------------------------------
+
 // const target = {};
 // const source = { a: { b: 1 } };
 // const result = Object.assign(target, source);
 // result.a.b = 2;
-// console.log(source);
+// console.log(source); // 2
 
+// ------------------------------------------------------
 
 // const target = { a: { b: 1 } };
 // const source = { a: [2, 3, 4] };
 // const result = Object.assign(target, source);
 // console.log(result);
+
+// ------------------------------------------------------
 
 // const target = { a: { b: 1 } };
 // const source = { a: [2, 3, 4] };
@@ -99,34 +113,53 @@ console.log(target);
 // target.a[2] = 90;
 // console.log(result);
 
+// ------------------------------------------------------
+
 // const target = { a: { b: { c: 1 } } };
 // const source = { a: { b: { d: 2 } } };
 // const result = Object.assign(target, source);
 // result.a.b.d = 3;
 // console.log(target);
 
+// ------------------------------------------------------
+
 //  Write a JavaScript program to list the properties of a JavaScript object.
 // Sample object:
+
 // var student = {
-// name : "David Rayy",
-// sclass : "VI",
-// rollno : 12
+//     name: "David Rayy",
+//     sclass: "VI",
+//     rollno: 12
 // };
+// console.log(Object.entries(student));
+
+// ------------------------------------------------------
 
 // Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.
 // Sample object:
+
 // var student = {
-// name : "David Rayy",
-// sclass : "VI",
-// rollno : 12
+//     name: "David Rayy",
+//     sclass: "VI",
+//     rollno: 12
 // };
+// function deleteProperty(obj,prop) {
+//     console.log(obj);
+//     delete obj[prop]
+//     console.log(obj);
+// }
+// deleteProperty(student,"rollno")
+
+// ------------------------------------------------------
 
 // function operationObj(obj) {
 //   obj = {...obj, c: 12}
 // }
 // let a = {  x: 34,  y: 56 }
 // operationObj(a);
-// console.log(a);
+// console.log(a);  // { x: 34, y: 56 }
+
+// ------------------------------------------------------
 
 // function operationObj(obj) {
 //   obj.z = {...obj, c: 12}
@@ -136,7 +169,9 @@ console.log(target);
 //   y: 56
 // }
 // operationObj(a);
-// console.log(a);
+// console.log(a);    //   { x: 34, y: 56, z: { x: 34, y: 56, c: 12 } }
+
+// ------------------------------------------------------
 
 // const target = { a: { b: { c: 1 } } };
 // const source = { a: { b: { d: 2 } } };
@@ -144,7 +179,24 @@ console.log(target);
 // result.a.b.d = 3;
 // console.log(source);
 
+// ------------------------------------------------------
+
 // Make a function that works as Object.assign() without using the in-built method. (make only for 2 arguments only)
+
+function objAss(obj1, obj2) {
+    for (const val in obj2) {
+        let a = val
+        let b = obj2[val]
+        console.log(a + ':' + b);
+    }
+}
+let obj = {
+    a: 'name',
+    b: 'surname',
+    c: 'fathername'
+}
+objAss(obj,obj)
+// ------------------------------------------------------
 
 // Write a visualization notes on given examples
 // let obj1 = { a: 23, b: 45 };
@@ -166,8 +218,6 @@ console.log(target);
 // obj1.c.f = 30;
 // console.log(arr1);
 
-
-
 // let obj1 = { a: 23, b: 45 };
 // let arr1 = Object.assign([], [{ ...obj1 }]);
 // let arr2 = arr1;
@@ -178,7 +228,7 @@ console.log(target);
 // let arr1 = [{ ...obj1 }];
 // let arr2 = Object.assign([], arr1);
 // arr2[0].c = 5;
-// console.log(arr1);
+// console.log(arr1);  //[ { a: 23, b: 45, c: 5 } ]
 
 // let obj1 = { a: 23, b: 45 };
 // let arr1 = [{ ...obj1 }];
