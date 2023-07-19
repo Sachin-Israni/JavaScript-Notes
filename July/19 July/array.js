@@ -7,7 +7,7 @@
 //     {first_name: "Demors", last_name: "Poet"},
 //     {first_name: "Aleos", last_name: "Lkeu"},
 //     ]
-//     Write a code that adds new key in each object named 
+//     Write a code that adds new key in each object named
 //     full_name: first_name + last_name
 
 //     const users  = [
@@ -44,7 +44,7 @@
 //        },
 //        hobbies: ["reading", "drawing", "gardening"],
 //      };
-//     => print all items of this object in line 
+//     => print all items of this object in line
 //     //Output:
 //     Vishal Kukreja
 //     32
@@ -101,7 +101,7 @@
 //       { name: "Product 8", price: 90, category: "Electronics" },
 //     ];
 //     Note: 2 questions
-//     Que1 => output: 
+//     Que1 => output:
 //         {
 //        Clothes: 4,
 //        Electronics: 4
@@ -168,13 +168,13 @@
 //         let arr1 = [{a: 34}, {a: 45}, {a:12}, {a:5}, {a:78}];
 //         let arr2 = arr1.map(item => item);
 //         arr2[2].b = 45;
-//     console.log(arr1);  // => 
+//     console.log(arr1);  // =>
 //         console.log(arr2);  // =>
 
 //     What is the output of the following code?
 //     let arr1 = [{a: 34}, {a: 45}, {a:12}, {a:5}, {a:78}];
 //         let arr2 = arr1.map(item => item.a * 2);
-//     console.log(arr1);  // => 
+//     console.log(arr1);  // =>
 //         console.log(arr2);  // =>
 
 //     What is the output of the following code?
@@ -184,11 +184,11 @@
 
 //     What is the output of the following code?
 //     const example = ({ a, b, c }) => {
-//     console.log(a, b, c);  
+//     console.log(a, b, c);
 //     };
 //     example(0, 1, 2);
 
-//      Find the Sum of Squares 
+//      Find the Sum of Squares
 //     let arr = [1,2,3,4,5] => ans : 55
 
 //     const students = [
@@ -300,11 +300,95 @@
 // A factor chain is an array in which the previous element is a factor of the next    consecutive element. The following is a factor chain:
 // [2, 4, 8, 16, 32]
 // 2 is a factor of 4  // 4 is a factor of 8  // 8 is a factor of 16  // 16 is a factor of 32
-let str='scgdss sachin'
-console.log(str.search('d'));
-console.log(str.split(''));
-console.log(str.split(' '));
-console.log(str.split());
+
 // Test Data:
 // ([2, 4, 8, 16, 32]) -> true([2, 4, 16, 32, 68]) -> false
 // ([2, 4, 16, 32, 64]) -> true
+
+
+//---------------------------------
+// let arr = [1, 2, 3, 4, 5,{P:12}]
+
+// let arr2=[...arr]
+// arr2[5].p=22
+// console.log(arr2);
+// console.log(arr);
+
+// arr.forEach(ele => console.log(ele*2));
+// console.log(arr);
+// console.log(Array.from([1, 2, 3], x => x + x));
+// console.log(Array.from('asd'));
+
+
+// let str='scgdss sachin'
+// console.log(str.search('d'));
+// console.log(str.split(''));
+// console.log(str.split(' '));
+// console.log(str.split());
+
+
+// let arrStr = ['Sachin', "Pujan", 'Sachin', 'Bhaumik','pujan','Bhaumik']
+// function delDuplicates(str) {
+
+// }
+// function delDuplicates(arr) {
+//     let newArr=[];
+//     for (i = 0; i < arr.length; i++) {
+//         var a=arr.slice(i+1)
+//         if(a.includes(i)){
+//             newArr.push(i)
+//         }
+//     }
+//     return newArr
+// }
+// let newArr = arrStr.map((v, i, arr) => {
+//     let news = []
+//     count = 0;
+//     v=i+1
+//     if (arr.includes(v)) {
+//         news.push(v)
+//         count++
+//     }
+//     return news.toString()
+// })
+// console.log(delDuplicates(arrStr));
+// console.log(newArr);
+
+// let arr = [1, 2, 3, 4, 15]
+// console.log(typeof arr.join(''));
+// let ar2=arr.reverse()
+// let arr2=arr.shift()
+// let arr2 = arr.sort((a, b) => a - b)
+// let arr2 = arr.sort(()
+// let arr2 = arr.some(ele => ele % 2 != 0)
+// let arr2=arr.toString()
+// let arr2=arr.splice(3,2,12,12,1,2)
+// let arr2=arr.unshift(1,2,2)
+
+// console.log(arr);
+// console.log(arr2);
+// console.log(ar2);
+
+// const numbers = [1,2, 2, 3, 4, 4, 5];
+// let filterArray = numbers.filter((val,i,arr)=>{
+//     return arr.indexOf(val)===i;
+// });
+// console.log(filterArray);
+
+let obj = [
+    { id: 1, name: 'sachin' },
+    { id: 2, name: 'pujan' },
+    { id: 4, name: 'bhaumik' },
+    { id: 3, name: 'vansh' },
+    { id: 2, name: 'pujan' },
+    { id: 10, name: 'mishri' }
+]
+// let valInArr = obj.map(val => Object.values(val))
+// let str = valInArr.filter((val, i, arr) =>{
+    
+// })
+// let valInArr=obj.values()
+// for (const values of valInArr) {
+//     console.log(values);
+// }
+// console.log(valInArr);
