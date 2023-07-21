@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #btn {
+            margin-top: 10px;
+        }
+
+        #demo {
+            display: none;
+            color: red;
+        }
+
+        #inValue {
+            margin-top: 10px;
+        }
+
+        #toUpperCase {
+            margin-top: 10px;
+        }
+
+        input {
+            text-align: center;
+        }
+    </style>
+    <title>Password generator</title>
+</head>
+
+<body>
+    <div>
+
+        <input id='pass' type="password">
+        <button id="show">Show</button>
+
+        <p id="demo">Please select a checkbox</p>
+        <p>Please select the range of your password</p>
+        <input type="number" value=8 min="8" max="25" id="range">
+
+        <p>Please click the checkbox value which you want to include in your password</p>
+
+        <input type="checkbox" id="LowerCase">
+        <label for="LowerCase" id="LC">LowerCase</label>
+        <br>
+
+        <input type="checkbox" id="UpperCase">
+        <label for="UpperCase" id="UC">UpperCase</label>
+        <br>
+
+        <input type="checkbox" id="number">
+        <label for="number" id="num">Number</label>
+        <br>
+
+        <input type="checkbox" id="SpecialCharacters">
+        <label for="SpecialCharacters" id="SC">Special Characters</label>
+        <br>
+
+        <button id="btn">Generate</button>
+        <button id="reset">Reset</button>
+
+    </div>
+
+    
+    <input type="text" id="inValue">
+    <br>
+    <button id="toUpperCase">Upper The Case</button>
+    <button id="toLowerCase">Lower The Case</button>
+    <button id="CamelCase">Camel The Case</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

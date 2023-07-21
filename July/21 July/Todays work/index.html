@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        HTML DOM Location reload() Method
+    </title>
+
+    <!--script to reload current page-->
+    <script>
+        function locationreload() {
+            location.reload();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>GeeksforGeeks</h1>
+    <h2>
+        HTML DOM Location reload() Method
+    </h2>
+    <p>
+        Click on the button to reload the document
+    </p>
+    <button id="btn">Click Me</button>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, ipsa adipisci! Tempore inventore
+        corrupti accusantium aspernatur perspiciatis explicabo, sapiente nam. Magnam atque perspiciatis modi beatae
+        laboriosam pariatur quidem totam quo!</p>
+    <div>This paragraph is hide by clicking the button</div>
+
+    <!-- script call here -->
+    <button onclick="locationreload()">
+        Reload page
+    </button>
+
+    <script>
+
+        let btn = document.getElementById('btn')
+        let para = document.getElementById('para')
+        btn.addEventListener('click', () => {
+            if (para.style.display != 'none') {
+                para.style.display = 'none'
+                btn.innerHTML = 'Click Me Again'
+            }
+            else {
+                para.style.display = 'block'
+                btn.innerHTML = 'Click Me'
+            }
+        })
+    </script>
+</body>
+
+</html>

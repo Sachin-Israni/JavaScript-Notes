@@ -147,21 +147,21 @@ setTimeout(greet, 3000, ' Sachin')
 
 let asd = document.getElementById('asd')
 let checking = document.getElementById('checking')
-checking.addEventListener('click', (e) => {
-    e.preventDefault()
-})
-function check() {
-    if (checking.hasAttribute('checked')) {
-        checking.removeAttribute('checked')
-        asd.innerHTML = 'NO'
-    }
-    else if (!checking.hasAttribute('checked')) {
-        checking.setAttribute('checked', '')
-        asd.innerHTML = 'Yes'
-    }
+// checking.addEventListener('click', (e) => {
+//     e.preventDefault()
+// })
+// function check() {
+//     if (checking.hasAttribute('checked')) {
+//         checking.removeAttribute('checked')
+//         asd.innerHTML = 'NO'
+//     }
+//     else if (!checking.hasAttribute('checked')) {
+//         checking.setAttribute('checked', '')
+//         asd.innerHTML = 'Yes'
+//     }
     // checking.getAttribute('checked') ? checking.removeAttribute('checked') : checking.setAttribute('checked', '')
     // asd.innerHTML = 'YES'
-}
+// }
 asd.addEventListener('click', () => {
     // check() {
     // if (checking.hasAttribute('checked')) {
@@ -178,20 +178,20 @@ asd.addEventListener('click', () => {
 })
 
 // console.log(checking.hasAttribute('checked'));
-console.log(document.getElementById('para').innerHTML)
-console.log(document.getElementById('para').innerText)
-console.log(document.getElementById('para').textContent)
+// console.log(document.getElementById('para').innerHTML)
+// console.log(document.getElementById('para').innerText)
+// console.log(document.getElementById('para').textContent)
 
-// let getId = document.querySelector('body')
-let getId = document.getElementsByTagName('body')[0].children
-// console.log(getId);
-for (let i = 0; i < getId.length; i++) {
-    getId[i].addEventListener('click', (e) => {
-        if (e.target.id == '') {
-            document.getElementById('getID').innerText = "No ID"
-        }
-        else {
-            document.getElementById('getID').innerText = e.target.id
-        }
-    })
-}
+// // let getId = document.querySelector('body')
+// let getId = document.getElementsByTagName('body')[0].children
+// // console.log(getId);
+// for (let i = 0; i < getId.length; i++) {
+//     getId[i].addEventListener('click', (e) => {
+//         if (e.target.id == '') {
+//             document.getElementById('getID').innerText = "No ID"
+//         }
+//         else {
+//             document.getElementById('getID').innerText = e.target.id
+//         }
+//     })
+// }
