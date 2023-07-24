@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: rgb(52, 52, 52);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            position: relative;
+            color: #fff;
+            background-color: rgb(0, 191, 255);
+            border: none;
+            padding: 10px;
+            border-radius: 2px;
+            box-shadow: 3px 3px 3px rgb(92, 91, 91);
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        .noti {
+            display: none;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 2px;
+            box-shadow: 3px 3px 3px rgb(92, 91, 91);
+            background-color: white;
+        }
+
+        #notification {
+            /*    display: flex;
+            flex-direction: column;*/
+            position: fixed;
+            width: 300px;
+            bottom: 5%;
+            right: 3%;
+        }
+    </style>
+    <title>Toast Notification</title>
+</head>
+
+<body>
+    <section id="main">
+        <button id="btn">Show Notification</button>
+    </section>
+    <div id="notification">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

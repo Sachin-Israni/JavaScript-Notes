@@ -25,7 +25,9 @@ ripple.addEventListener('click', function(e)  {
     let span = document.createElement('span')
     span.style.left = x + 'px'
     span.style.top = y + 'px'
-    this.append(span)
+    console.log(x);
+    console.log(y);
+    ripple.append(span)
     setTimeout(()=>{
         span.remove()
     },650)
