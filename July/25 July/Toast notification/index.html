@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: #983748;
+        }
+
+        .buttons {
+            margin: 30px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            cursor: pointer;
+            background-color: black;
+            color: aliceblue;
+        }
+
+        #toastbox {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .toast {
+            width: 200px;
+            height: 50px;
+            background: white;
+            font-weight: 500;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <title>Toast Notification</title>
+</head>
+
+<body>
+    <div class="buttons">
+        <button onmouseover="show()" onmouseout="hide()">Success</button>
+    </div>
+    <div id="toastbox"></div>
+
+    <script>
+        let sucMsg = 'Successfully submitted'
+        let errMsg = 'error submitted'
+        let invMsg = 'invalid submitted'
+        let box = document.getElementById('toastbox')
+        let strat;
+        let end;
+        function show() {
+            clearTimeout(end)
+            let toast = document.createElement('div')
+            toast.classList.add('toast')
+            let arr = ['Hello', 'Follow Me', 'Thanks!', 'Have A Nice Day']
+            toast.innerHTML = arr[Math.floor((Math.random()) * arr.length)]
+            box.appendChild(toast)
+            strat = setTimeout(() => {
+                show()
+            }, 600)
+        }
+        function hide() {
+            clearTimeout(strat)
+            end = setTimeout(() => {
+                if(box.childElementCount>0){
+                    box.firstChild.remove()
+                }
+                hide()
+            }, 500)
+        }
+    </script>
+</body>
+
+</html>
