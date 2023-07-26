@@ -37,6 +37,7 @@
 
         li {
             background-color: #253679;
+            position: relative;
             margin: 20px;
             padding: 7px;
             color: #fff;
@@ -50,6 +51,17 @@
             margin-bottom: 10px;
             color: #21826381;
         }
+
+        button {
+            position: absolute;
+            right: 2%;
+            color: white;
+            background-color: rgba(255, 0, 0, 0.278);
+            border: 1px solid red;
+            font-size: 13px;
+            padding: 2px 8px;
+            border-radius: 2px;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -57,14 +69,19 @@
 <body>
     <div>
         <h1>TO-DO LIST</h1>
-        <input type="text" id="input"> <br>
-        <input type='button' id="click" value="Click here to add">
+        <form id="form">
+            <input type="text" id="input"> <br>
+            <input type='submit' id="click" value="Click here to add">
+        </form>
     </div>
-    <!-- <ul>
-
+    <!-- <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
     </ul> -->
 
     <script src="script.js"></script>
+
 </body>
 
 </html>

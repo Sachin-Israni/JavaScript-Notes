@@ -9,54 +9,57 @@
 // data will be in following format
 
 const usersData = [
-    // {
-    //     id: 432,
-    //     first_name: "Asd",
-    //     last_name: "paerl",
-    //     email: "abc@gmail.com",
-    //     phone: "+919394099203"
-    // },
-    // {
-    //     id: 342,
-    //     first_name: "dsf",
-    //     last_name: "paerl",
-    //     email: "sdf@gmail.com",
-    //     phone: "+919394099089"
-    // },
-    // {
-    //     id: 765,
-    //     first_name: "dfgf",
-    //     last_name: "dfg",
-    //     email: "muyjgh@gmail.com",
-    //     phone: "+919394054345"
-    // },
-    // {
-    //     id: 123,
-    //     first_name: "sdxfg",
-    //     last_name: "gdfd",
-    //     email: "werrew@gmail.com",
-    //     phone: "+915464569203"
-    // },
     {
-        name: 'sachin',
-        age: 10
+        id: 432,
+        first_name: "Asd",
+        last_name: "paerl",
+        email: "abc@gmail.com",
+        phone: "+919394099203"
     },
     {
-        name: 'aknsdbasd',
-        age: 100
+        id: 342,
+        first_name: "dsf",
+        last_name: "paerl",
+        email: "sdf@gmail.com",
+        phone: "+919394099089"
     },
     {
-        name: 'mkbasdjaachin',
-        age: 230
-    }
+        id: 765,
+        first_name: "dfgf",
+        last_name: "dfg",
+        email: "muyjgh@gmail.com",
+        phone: "+919394054345"
+    },
+    {
+        id: 123,
+        first_name: "sdxfg",
+        last_name: "gdfd",
+        email: "werrew@gmail.com",
+        phone: "+915464569203"
+    },
+    // {
+    //     name: 'sachin',
+    //     age: 10
+    // },
+    // {
+    //     name: 'aknsdbasd',
+    //     age: 100
+    // },
+    // {
+    //     name: 'mkbasdjaachin',
+    //     age: 230
+    // }
 ]
 
 let body = document.getElementById('body')
 function foo(arr) {
     arr.forEach(e => {
         body.innerHTML += `<tr>
-            <td>${e.name}</td>
-            <td>${e.age}</td>
+            <td>${e.id}</td>
+            <td>${e.first_name}</td>
+            <td>${e.last_name}</td>
+            <td>${e.email}</td>
+            <td>${e.phone}</td>
         </tr>`
     });
 }

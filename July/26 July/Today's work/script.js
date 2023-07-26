@@ -24,10 +24,10 @@
 //-----------------------------------------------
 
 // ------------ TO-DO List Function
-let body=document.querySelector('body')
-let ul = document.createElement('ul')
-let input = document.getElementById('input')
-let click = document.getElementById('click')
+let body = document.querySelector('body');
+let ul = document.createElement('ul');
+let input = document.getElementById('input');
+let click = document.getElementById('click');
 
 // console.log(ul);
 // li.textContent = 'sachin'
@@ -35,19 +35,69 @@ let click = document.getElementById('click')
 // ul.append(li)
 // console.log(li.innerText); // sachin
 
-click.addEventListener('click',toDoList)
+let form = document.getElementById('form');
+form.addEventListener("submit", toDoList);
+// click.addEventListener("click", toDoList);
 
 function toDoList() {
-    let li = document.createElement('li')
-    li.textContent = input.value
+    let li = document.createElement('li');
+    li.textContent = input.value;
+    let delBtn = document.createElement('button')
+    delBtn.innerText = 'DEL';
+
     if (li.textContent.trim().length > 2) {
-        let a = confirm('This item will be added in your list')
-        if (a == true) {
-            ul.style.padding = '20px'
-            ul.append(li)
+        if (confirm('This item will be added in your list')) {
+            ul.style.padding = '20px';
+            li.append(delBtn);
+            ul.append(li);
+            input.value = '';
         }
+        body.append(ul);
     }
-    // console.log(li.textContent.trim().length > 1)
-    body.append(ul)
-    console.log('akjdvh'+ul.childNodes.length);
+
+    delBtn.addEventListener('click', () => {
+        li.remove();
+        if (ul.childNodes.length == 0) {
+            ul.remove();
+        }
+    })
+
+    // console.log('akjdvh' + ul.childNodes.length);
+    // console.log('Hi , I go printed');
+    event.preventDefault();
 }
+
+
+
+
+
+// var a=[0,1,2,3,4,5]
+// a.splice(1,3,"hello")
+// console.log(a);
+
+// console.log(8 << 3); // a = 8, b = 3  a*(2*2*2)     2 rasie to b
+// console.log(8 >> 3); // a = 8, b = 3  a/(2*2*2)     2 rasie to b
+
+// console.log('NaN'=='NaN');  // true
+// console.log(NaN===NaN);  // false
+
+// console.log(20 & 1 == 0);  // doubt
+// var a = 10, b = '10';
+// if (a === b || a != b){
+//     console.log('asd');
+// }
+// else console.log('nthg');
+
+
+// ----------------------------------------------------------------
+
+const myList = document.getElementById('myList');
+function itemName(event) {
+    if (event.target.tagName === 'LI') {
+        alert('You clicked: ' + event.target.textContent);
+    }
+}
+
+myList.addEventListener('click', itemName);
+
+// ----------------------------------------------------------------
