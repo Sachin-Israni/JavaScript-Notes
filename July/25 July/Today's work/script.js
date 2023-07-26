@@ -54,8 +54,10 @@ const usersData = [
 let body = document.getElementById('body')
 function foo(arr) {
     arr.forEach(e => {
-        const a = e.name + e.age
-        body.append(a)
+        body.innerHTML += `<tr>
+            <td>${e.name}</td>
+            <td>${e.age}</td>
+        </tr>`
     });
 }
 
