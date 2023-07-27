@@ -46,10 +46,21 @@ function toDoList() {
     if (input.value.trim().length > 2) {
         if (confirm('This item will be added in your list')) {
             let li = document.createElement('li');
-            li.textContent = input.value;
-            li.setAttribute('draggable',"True")
+            li.textContent = input.value.trim()
+            li.setAttribute('draggable', "True")
+
+            let editBtn = document.createElement('button')
+            editBtn.classList.add('edit')
+            editBtn.innerText = 'EDIT';
+
             let delBtn = document.createElement('button')
             delBtn.innerText = 'DEL';
+
+            editBtn.addEventListener('click', () => {
+                input.value = li.textContent.slice(0, -7)
+                li.remove()
+            })
+
             delBtn.addEventListener('click', () => {
                 li.remove();
                 if (ul.childNodes.length == 0) {
@@ -58,6 +69,7 @@ function toDoList() {
             })
 
             ul.style.padding = '20px';
+            li.append(editBtn);
             li.append(delBtn);
             ul.append(li);
             input.value = '';

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #973867;
+            margin-bottom: 10px;
+        }
+
+        form {
+            background-color: aqua;
+            padding: 40px;
+            width: 400px;
+            text-align: center;
+        }
+
+        input {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        #letsDoIt {
+            width: 100px;
+            margin: auto;
+
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <h1>Registration Form</h1>
+    <form id="form">
+        <input type="text" id="username" placeholder="Enter Your Username"> <br>
+        <p id="user"></p>
+        <input type="text" id="Pass" placeholder="Enter Your Password"><br>
+        <p id="passIn"></p>
+        <input type="password" id="confirm" placeholder="Enter Your Password Again"><br>
+        <p id="conIn"></p>
+        <input type="submit" id="letsDoIt" value="Submit">
+    </form>
+    <script>
+        let form = document.getElementById('form')
+        let username = document.getElementById('username')
+        let pass = document.getElementById('Pass')
+        let conf = document.getElementById('confirm')
+        let letsGo = document.getElementById('letsDOIt')
+
+        form.addEventListener('submit', () => {
+            event.preventDefault()
+
+            if (username.value == '') {
+                document.getElementById('user').textContent = 'Username can not be empty'
+            }
+            else if (username.value.length < 3) {
+                document.getElementById('user').textContent = 'Username should contain more than 3 letters'
+            }
+            else {
+                document.getElementById('user').textContent = ''
+            }
+
+            if (pass.value == '') {
+                document.getElementById('passIn').textContent = 'Password can not be empty'
+            }
+            else if (pass.value.length < 8) {
+                document.getElementById('passIn').textContent = 'Password should contain more than 8 letters'
+            }
+            else {
+                document.getElementById('passIn').textContent = ''
+            }
+
+            if (conf.value == '') {
+                document.getElementById('conIn').textContent = 'Password can not be empty'
+            }
+            else if (conf.value != pass.value) {
+                document.getElementById('conIn').textContent = 'Paaword are not matching'
+            }
+            else {
+                document.getElementById('conIn').textContent = ''
+            }
+
+            if (username.value.length > 3 && conf.value == pass.value && conf.value != '' && pass.value != '') {
+                username.value = ''
+                pass.value = ''
+                conf.value = ''
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

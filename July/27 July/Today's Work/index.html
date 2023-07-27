@@ -9,7 +9,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .container{
+        /* .container{
             background-color: #333;
             padding: 10px;
             margin-top: 10px;
@@ -23,19 +23,46 @@
         }
         .dragging{
             opacity: .7;
+        } */
+
+        /* ADD,EDIT & DEL List -- CSS*/
+
+        form{
+            background-color: red;
+            width: 350px;
+            padding: 20px;
+            margin: 20px;
+        }
+        li{
+            margin: 20px;
         }
     </style>
     <title>Drag And Drop</title>
 </head>
 <body>
-    <div class="container">
+    
+    <!-- <div class="container">
         <p class="draggable" draggable="true">1</p>
         <p class="draggable" draggable="true">2</p>
     </div>
     <div class="container">
         <p class="draggable" draggable="true">3</p>
         <p class="draggable" draggable="true">4</p>
-    </div>
+    </div> -->
+
+
+    
+    <h2>The list which contains the 3 button with input tag</h2>
+    <form id="form" action="" >
+        <input type="text" id="input" placeholder="Add Your List Itmes">
+        <input type="submit" value="ADD" id="sub">
+        <input type="button" value="EDIT" id="edit">
+        <input type="button" value="DELETE" id="del">
+    </form>
+    <ul></ul>
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
