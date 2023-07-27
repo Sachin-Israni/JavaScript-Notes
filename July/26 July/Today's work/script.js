@@ -25,7 +25,7 @@
 
 // ------------ TO-DO List Function
 let body = document.querySelector('body');
-let ul = document.createElement('ul');
+let ul = document.createElement('ol');
 let input = document.getElementById('input');
 let click = document.getElementById('click');
 
@@ -36,35 +36,40 @@ let click = document.getElementById('click');
 // console.log(li.innerText); // sachin
 
 let form = document.getElementById('form');
+// click.addEventListener("submit", toDoList);
 form.addEventListener("submit", toDoList);
 // click.addEventListener("click", toDoList);
 
 function toDoList() {
-    let li = document.createElement('li');
-    li.textContent = input.value;
-    let delBtn = document.createElement('button')
-    delBtn.innerText = 'DEL';
+    event.preventDefault();
 
-    if (li.textContent.trim().length > 2) {
+    if (input.value.trim().length > 2) {
         if (confirm('This item will be added in your list')) {
+            let li = document.createElement('li');
+            li.textContent = input.value;
+            li.setAttribute('draggable',"True")
+            let delBtn = document.createElement('button')
+            delBtn.innerText = 'DEL';
+            delBtn.addEventListener('click', () => {
+                li.remove();
+                if (ul.childNodes.length == 0) {
+                    ul.remove();
+                }
+            })
+
             ul.style.padding = '20px';
             li.append(delBtn);
             ul.append(li);
             input.value = '';
+            body.append(ul);
         }
-        body.append(ul);
+        input.value = '';
     }
 
-    delBtn.addEventListener('click', () => {
-        li.remove();
-        if (ul.childNodes.length == 0) {
-            ul.remove();
-        }
-    })
 
     // console.log('akjdvh' + ul.childNodes.length);
     // console.log('Hi , I go printed');
-    event.preventDefault();
+    // event.preventDefault();
 }
 
 
@@ -91,13 +96,13 @@ function toDoList() {
 
 // ----------------------------------------------------------------
 
-const myList = document.getElementById('myList');
-function itemName(event) {
-    if (event.target.tagName === 'LI') {
-        alert('You clicked: ' + event.target.textContent);
-    }
-}
+// const myList = document.getElementById('myList');
+// function itemName(event) {
+//     if (event.target.tagName === 'LI') {
+//         alert('You clicked: ' + event.target.textContent);
+//     }
+// }
 
-myList.addEventListener('click', itemName);
+// myList.addEventListener('click', itemName);
 
 // ----------------------------------------------------------------
