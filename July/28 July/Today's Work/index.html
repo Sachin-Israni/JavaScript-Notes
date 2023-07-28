@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            text-align: center;
+            /* background-color: #396328; */
+            background-color: #872537;
+        }
+        .d-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            margin: .5vw;
+        }
+
+        #boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 10vw);
+            grid-template-rows: repeat(3, 10vw);
+            text-align: center;
+        }
+
+        .box {
+            border: solid;
+            font-size: 5vw;
+        }
+        .borCol{
+            border-color: red;
+        }
+        .bt-0 {
+            border-top: 0;
+        }
+
+        .bl-0 {
+            border-left: 0;
+        }
+
+        .br-0 {
+            border-right: 0;
+        }
+
+        .bb-0 {
+            border-bottom: 0;
+        }
+        .mt-20{
+            margin-top: 1.5vw;
+        }
+        .mb-20{
+            margin-bottom: 1.5vw;
+        }
+        p{
+            font-size: 2vw;
+            color: #fff;
+        }
+        button{
+            font-size: 2vw;
+            border: .5vw solid #0a6999;
+            border-radius: 1vw;
+            background-color: #287298;
+            padding: .5vw 1vw;
+        }
+    </style>
+
+
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <p id="turnBtn" class="mt-20 mb-20">Turn for X</p>
+    <div class="container d-flex">
+        <div id="boxes">
+
+            <div class="box borCol d-flex bt-0 bl-0"><span class="xo"></span></div>
+            <div class="box borCol d-flex bt-0"><span class="xo"></span></div>
+            <div class="box borCol d-flex bt-0 br-0"><span class="xo"></span></div>
+            <div class="box borCol d-flex bl-0"><span class="xo"></span></div>
+            <div class="box borCol d-flex"><span class="xo"></span></div>
+            <div class="box borCol d-flex br-0"><span class="xo"></span></div>
+            <div class="box borCol d-flex bb-0 bl-0"><span class="xo"></span></div>
+            <div class="box borCol d-flex bb-0"><span class="xo"></span></div>
+            <div class="box borCol d-flex bb-0 br-0"><span class="xo"></span></div>
+
+        </div>
+    </div>
+    <button onclick="reset()" class="mt-20">Reset</button>
+    <button id="undo" class="mt-20">Undo</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

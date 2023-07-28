@@ -75,27 +75,27 @@
         form.addEventListener('submit', () => {
             event.preventDefault()
 
-            if (username.value == '') {
+            if (username.value.trim() == '') {
                 document.getElementById('user').textContent = 'Username can not be empty'
             }
-            else if (username.value.length < 3) {
+            else if (username.value.trim().length < 3) {
                 document.getElementById('user').textContent = 'Username should contain more than 3 letters'
             }
             else {
                 document.getElementById('user').textContent = ''
             }
 
-            if (pass.value == '') {
+            if (pass.value.trim() == '') {
                 document.getElementById('passIn').textContent = 'Password can not be empty'
             }
-            else if (pass.value.length < 8) {
+            else if (pass.value.trim().length < 8) {
                 document.getElementById('passIn').textContent = 'Password should contain more than 8 letters'
             }
             else {
                 document.getElementById('passIn').textContent = ''
             }
 
-            if (conf.value == '') {
+            if (conf.value.trim() == '') {
                 document.getElementById('conIn').textContent = 'Password can not be empty'
             }
             else if (conf.value != pass.value) {
