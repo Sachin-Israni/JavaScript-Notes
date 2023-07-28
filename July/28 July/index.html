@@ -49,6 +49,11 @@
             border-bottom: 0;
         }
     </style>
+    <script>
+        function reset(){
+            location.reload()
+        }
+    </script>
     <title>Tic Tac Toe</title>
 </head>
 
@@ -67,6 +72,8 @@
             <div class="box d-flex bb-0 br-0"><span class="xo"></span></div>
 
         </div>
+        <p id="turnBtn">Turn for X</p>
+        <button onclick="reset()">Reset</button>
     </div>
 
 
