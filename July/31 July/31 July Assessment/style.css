@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.main {
+    display: flex;
+    margin: 10px;
+}
+
+.sum {
+    width: 50%;
+    padding: 20px;
+}
+
+.marron {
+    color: maroon;
+    margin: 10px 0;
+}
+
+.opa {
+    opacity: .7;
+    font-size: 16px;
+}
+
+.name {
+    display: flex;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.name img {
+    height: auto;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.name2 button {
+    margin-top: 6px;
+    border: 1px solid;
+    padding: 2px 5px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.sch {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.date {
+    background-color: rgb(244, 163, 163);
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.blue {
+    background-color: rgb(134, 134, 236);
+    color: blue;
+}
+
+.green {
+    background-color: rgb(161, 243, 161);
+    color: green;
+}
+
+
+
+
+
+
+
+.promo {
+    padding: 20px;
+}
+.promocode{
+    padding: 20px 0;
+}
+
+.payMain,
+.payMain2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.payMain p,
+.payMain2 p {
+    margin: 10px 0px;
+}
+
+.price {
+    text-align: end;
+}
+
+.last {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total{
+    margin: 10px 0;
+}
+#btn{
+    margin: 10px;
+    padding: 5px 24px;
+    background-color: rgb(243, 117, 117);
+    border: none;
+    color: #fff;
+}
+.purple{
+    background-color: rgb(173, 128, 216);
+    border-radius: 10px;
+    padding: 10px 25px;
+}
