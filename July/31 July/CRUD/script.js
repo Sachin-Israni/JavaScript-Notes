@@ -21,7 +21,24 @@ submit.addEventListener('click', () => {
     emObj.Phone = mob.value;
     table.innerHTML += `<tr>
                         <td>${emObj.Name}</td>
+                        <td>${emObj.Email}</td>
+                        <td>${emObj.Phone}</td>
+                        <td>
+                        <button class='edit'>EDIT</button>
+                        <button class='del'>DELETE</button>
+                        </td>
                         </tr>`
-    console.log(emObj);
+    // console.log(emObj);
+    Fname.value = '';
+    email.value = '';
+    mob.value = '';
     event.preventDefault();
-})
+    let del = document.getElementsByClassName('del')
+    Array.from(del).forEach((e)=>{
+        e.addEventListener('click', () => {
+            let td=document.getElementsByTagName('tbody')
+            td[0].style.display='none'
+            console.log(e);
+        })    
+    })
+ })

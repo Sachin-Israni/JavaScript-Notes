@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
+body{
+    background-color: rgb(171, 255, 255);
+}
 .main {
     display: flex;
     margin: 10px;
@@ -21,10 +23,16 @@
 }
 
 .opa {
-    opacity: .7;
-    font-size: 16px;
+    opacity: .6;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
-
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid burlywood;
+    background-color: aquamarine;
+}
 .name {
     display: flex;
     margin: 10px 0;
@@ -33,18 +41,22 @@
 
 .name img {
     height: auto;
-    width: 50px;
+    width: 100px;
     border-radius: 10px;
 }
 
 .name2 button {
     margin-top: 6px;
     border: 1px solid;
-    padding: 2px 5px;
-    background-color: #fff;
+    padding: 7px 15px;
+    background-color:inherit;
     border-radius: 10px;
 }
 
+.name2 h4{
+    font-size: 20px;
+    margin: 10px 0 4px 0;
+}
 .sch {
     display: flex;
     justify-content: space-between;
@@ -54,8 +66,9 @@
 .date {
     background-color: rgb(244, 163, 163);
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 20px 40px;
     text-align: center;
+    font-size: 20px;
 }
 
 .blue {
@@ -112,6 +125,7 @@
     background-color: rgb(243, 117, 117);
     border: none;
     color: #fff;
+    border-radius: 10px;
 }
 .purple{
     background-color: rgb(173, 128, 216);
@@ -129,5 +143,11 @@ button{
     cursor: pointer;
 }
 #disVal{
+    text-align: end;
+}
+.space{
+    margin-block: 10px;
+}
+#aftdis{
     text-align: end;
 }
