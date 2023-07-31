@@ -50,7 +50,7 @@
 
             <div class="promocode">
                 <h4>Promo Code</h4>
-                <input type="text" placeholder="Enter Promo Code" id="pc">
+                <input type="text" placeholder="Enter Promo Code" id="pc" disabled>
                 <button id="check" disabled>Check</button>
                 <p id="demo"></p>
             </div>
@@ -65,22 +65,28 @@
                             <p>Summary</p>
                         </div>
                         <div class="price">
-                            <p>Consultation</p>
+                            <p id="befgst">Consultation</p>
                             <p>18%</p>
-                            <p>Rs.600</p>
+                            <p id="aftgst">Rs.600</p>
                         </div>
                     </div>
                     <hr>
                     <div class="payMain2">
-                        <p>Total</p>
-                        <p>Rs.600</p>
+                        <div class="percentage">
+                            <p id="disPercen"></p>
+                            <p>Total</p>
+                        </div>
+                        <div class="valueDis">
+                            <p id="disVal"></p>
+                            <p id="aftdis">Rs.600</p>
+                        </div>
                     </div>
                 </div>
                 <p>Pay securly by Credit/Debit card,Internet Banking, and UPI through Razorpay.</p>
                 <div class="last">
                     <div class="total">
                         <p>Total</p>
-                        <p>Rs.600</p>
+                        <p id="aftdis2">Rs.600</p>
                     </div>
                     <button id="btn">
                         Pay Now

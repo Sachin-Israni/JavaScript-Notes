@@ -76,6 +76,7 @@
 
 .promo {
     padding: 20px;
+    border-left: 1px solid;
 }
 .promocode{
     padding: 20px 0;
@@ -116,4 +117,17 @@
     background-color: rgb(173, 128, 216);
     border-radius: 10px;
     padding: 10px 25px;
+}
+
+#aftdis2{
+    font-weight: 700;
+}
+#amtgst{
+    display: none;
+}
+button{
+    cursor: pointer;
+}
+#disVal{
+    text-align: end;
 }
