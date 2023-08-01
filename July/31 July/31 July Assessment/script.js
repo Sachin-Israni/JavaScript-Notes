@@ -21,7 +21,7 @@ function checking() {
         disPercen.innerText = "Discount (-25%)"
         a = 25;
         b = 100;
-        disVal.innerText = 'Rs.' + (gstAmtInFloor * a / b)
+        disVal.innerText = 'Rs.' + (gstAmt * a / b)
         // befgst.innerText = 'Rs.' + userInputAmt.value
         // aftgst.innerText = 'Rs.' + amtgst.value
         // disVal.innerText = 'Rs.' + (amtgst.value * 25 / 100)
@@ -35,7 +35,7 @@ function checking() {
         disPercen.innerText = "Discount (-50%)"
         a = 50;
         b = 100;
-        disVal.innerText = 'Rs.' + (gstAmtInFloor * a / b)
+        disVal.innerText = 'Rs.' + (gstAmt * a / b)
         // befgst.innerText = 'Rs.' + userInputAmt.value
         // aftgst.innerText = 'Rs.' + amtgst.value
         // disVal.innerText = 'Rs.' + (amtgst.value * 50 / 100)
@@ -48,7 +48,7 @@ function checking() {
         disPercen.innerText = "Discount (-75%)"
         a = 75;
         b = 100;
-        disVal.innerText = 'Rs.' + (gstAmtInFloor * a / b)
+        disVal.innerText = 'Rs.' + (gstAmt * a / b)
         // befgst.innerText = 'Rs.' + userInputAmt.value
         // aftgst.innerText = 'Rs.' + amtgst.value
         // disVal.innerText = 'Rs.' + (amtgst.value * 75 / 100)
@@ -74,36 +74,62 @@ function checking() {
     // else {
     // }
     befgst.innerText = 'Rs.' + userInputAmt.value
-    aftgst.innerText = 'Rs.' + gstAmtInFloor
-    aftdis.innerText = 'Rs.' + Math.round((gstAmtInFloor - (gstAmtInFloor * a / b)))
-    aftdis2.innerText = 'Rs.' + Math.round((gstAmtInFloor - (gstAmtInFloor * a / b)))
-    // aftdis.innerText = 'Rs.' + (gstAmtInFloor - (gstAmtInFloor * a / b))
-    // aftdis2.innerText = 'Rs.' + (gstAmtInFloor - (gstAmtInFloor * a / b))
+    aftgst.innerText = 'Rs.' + gstAmt
+    aftdis.innerText = 'Rs.' + (gstAmt - (gstAmt * a / b))
+    aftdis2.innerText = 'Rs.' + (gstAmt - (gstAmt * a / b))
+    // aftdis.innerText = 'Rs.' + (gstAmt - (gstAmt * a / b))
+    // aftdis2.innerText = 'Rs.' + (gstAmt - (gstAmt * a / b))
 
 }
 
 userInputAmt.addEventListener('input', () => {
-    amtgst.value = Number(userInputAmt.value) + (userInputAmt.value * 18 / 100)
-    gstAmtInFloor = amtgst.value
-    pc.addEventListener('input',()=>{
+    gstAmt = (Number(userInputAmt.value) + (userInputAmt.value * 18 / 100)).toFixed(2)
+    // gstAmt = Number(amtgst.value)
+    pc.addEventListener('input', () => {
         if (pc.value == '') {
             check.setAttribute('disabled', '')
             check.style.opacity = '.7'
+            disPercen.innerText = "Discount (0%)"
+            disVal.innerText = 'Rs.00'
+            aftgst.innerText = 'Rs.' + gstAmt
+            aftdis.innerText = 'Rs.' + gstAmt
+            aftdis2.innerText = 'Rs.' + gstAmt
         }
         else {
             check.removeAttribute('disabled')
             check.style.opacity = '1'
         }
     })
-    if (userInputAmt.value < 500) {
-        befgst.innerText = 'Rs.' + userInputAmt.value
-        aftgst.innerText = 'Rs.' + gstAmtInFloor
-        aftdis.innerText = 'Rs.' + gstAmtInFloor
-        aftdis2.innerText = 'Rs.' + gstAmtInFloor
+
+
+    if (userInputAmt.value < 0) {
+        befgst.innerText = 'Rs.00'
+        aftgst.innerText = 'Rs.00'
+        aftdis.innerText = 'Rs.00'
+        aftdis2.innerText = 'Rs.00'
         disPercen.innerText = "Discount (0%)"
         disVal.innerText = 'Rs.' + "00"
     }
-    if (userInputAmt.value >= 500 || userInputAmt.value >= 1000 || userInputAmt.value >= 1500) {
+
+    else if (userInputAmt.value < 500) {
+        if (userInputAmt.value == '') {
+            befgst.innerText = 'Rs.' + '00'
+        }
+        else {
+            befgst.innerText = 'Rs.' + userInputAmt.value
+        }
+        aftgst.innerText = 'Rs.' + gstAmt
+        aftdis.innerText = 'Rs.' + gstAmt
+        aftdis2.innerText = 'Rs.' + gstAmt
+        disPercen.innerText = "Discount (0%)"
+        disVal.innerText = 'Rs.' + "00"
+    }
+
+    else if (userInputAmt.value >= 500 || userInputAmt.value >= 1000 || userInputAmt.value >= 1500) {
+        befgst.innerText = 'Rs.' + userInputAmt.value
+        aftgst.innerText = 'Rs.' + gstAmt
+        aftdis.innerText = 'Rs.' + gstAmt
+        aftdis2.innerText = 'Rs.' + gstAmt
         check.addEventListener('click', () => {
             val = pc.value.toUpperCase().split(' ').join('')
             checking()
