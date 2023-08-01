@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+     <input type="text" placeholder="Enter Amount" id="enterAmt">
+    <input type="text" placeholder="Enter Promo Code" disabled id="enterPromo">
+    <input type="button" value="Check" disabled id="check">
+
+    <input type="text" placeholder="List" id="in">
+    <input type="button" value="Add" id="add">
+    <input type="button" value="Update" id="update">
+    <ul id="ul"></ul> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+    <!-- <header class="bg-dark mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <nav class="navbar justify-content-between">
+                        <a class="navbar-brand">Todo List</a>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                                id="searchtextbox" />
+                        </form>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header> -->
+    <section class="todo-outer">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-12 col-md-8">
+                    <h1>Welcome in Todo List Application</h1>
+                    <div class="todo-inner">
+                        <div class="form-row">
+                            <div class="col-8 mr-sm-2">
+                                <input type="text" class="form-control" placeholder="Enter your task"
+                                    id="addtaskinput" />
+                                <input type="hidden" id="saveindex">
+                            </div>
+                            <button type="button" class="btn btn-success mr-sm-2" id="addtaskbtn">
+                                Add Task
+                            </button>
+                            <button type="button" class="btn btn-success mr-sm-2" id="savetaskbtn"
+                                style="display: none;">
+                                Save Task
+                            </button>
+                            <button type="button" id="deleteallbtn" class="btn btn-danger">
+                                Delete All
+                            </button>
+                        </div>
+                        <div class="to-do-output">
+                            <table class="table table-striped mt-3 mb-0" id="addedtasklist">
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // let input = document.getElementById('in')
+        // let add = document.getElementById('add')
+        // let update = document.getElementById('update')
+        // let ul = document.getElementById('ul')
+        // let list = []
+        // add.addEventListener('click', () => {
+        //     list.push(input.value)
+        //     list.forEach((e, index) => {
+        //         ul.innerHTML += `<li><span>${e}</span><button onclick='edit(${index})'>EDIT</button></li>`
+        //         input.value = ''
+        //     })
+        //     // ul.append(li)
+        //     console.log(list);
+        // })
+
+        // function edit(index) {
+        //     input.value = list[index]
+        //     update.addEventListener('click', () => {
+        //         list[index] = input.value
+        //         console.log(input.value);
+        //         console.log(list);
+        //         console.log(list[index]);
+        //     })
+        // }
+
+
+        
+        // add.addEventListener('click', main)
+        // function main() {
+
+        //     if (input.value != '') {
+        //         let li = document.createElement('li')
+
+        //         let span = document.createElement('span')
+        //         span.innerText = input.value
+
+        //         let btn = document.createElement('Button')
+        //         btn.innerText = 'EDIT'
+        //         btn.addEventListener('click', () => {
+        //             input.value = span.innerText
+        //             update.addEventListener('click', editList)
+        //             function editList() {
+        //                 span.innerText = input.value
+        //                 input.value=''
+        //             }
+        //         })
+        //         li.append(span)
+        //         li.append(btn)
+        //         ul.append(li)
+        //     }
+        //     input.value = ''
+
+        // }
+
+
+
+// let enterAmt = document.getElementById('enterAmt')
+// let enterPromo = document.getElementById('enterPromo')
+// let check = document.getElementById('check')
+// enterAmt.addEventListener('input', () => {
+//     if (enterAmt.value < 500) {
+//         enterPromo.setAttribute('disabled', '')
+//         check.setAttribute('disabled', '')
+//     }        
+//     if (enterAmt.value >= 500 || enterAmt.value >= 1000 || enterAmt.value >= 1500) {
+//         enterPromo.removeAttribute('disabled')
+//         check.removeAttribute('disabled')
+//     }
+// })
+
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
