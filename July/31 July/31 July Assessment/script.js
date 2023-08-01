@@ -16,9 +16,9 @@ function checking() {
     var a = 0;
     var b = 1;
     if (val == 'OFF25') {
-        demo.innerText = 'Promo Code Applied'
+        demo.innerText = 'OFF25 Promo Code Applied'
         demo.style.color = 'green'
-        disPercen.innerText = "(-25%)"
+        disPercen.innerText = "Discount (-25%)"
         a = 25;
         b = 100;
         disVal.innerText = 'Rs.' + (gstAmtInFloor * a / b)
@@ -30,9 +30,9 @@ function checking() {
 
     }
     else if (val == 'OFF50' && userInputAmt.value >= 1000) {
-        demo.innerText = 'Promo Code Applied'
+        demo.innerText = 'OFF50 Promo Code Applied'
         demo.style.color = 'green'
-        disPercen.innerText = "(-50%)"
+        disPercen.innerText = "Discount (-50%)"
         a = 50;
         b = 100;
         disVal.innerText = 'Rs.' + (gstAmtInFloor * a / b)
@@ -43,9 +43,9 @@ function checking() {
         // aftdis2.innerText = 'Rs.' + (amtgst.value - (amtgst.value * 50 / 100))
     }
     else if (val == 'OFF75' && userInputAmt.value >= 1500) {
-        demo.innerText = 'Promo Code Applied'
+        demo.innerText = 'OFF75 Promo Code Applied'
         demo.style.color = 'green'
-        disPercen.innerText = "(-75%)"
+        disPercen.innerText = "Discount (-75%)"
         a = 75;
         b = 100;
         disVal.innerText = 'Rs.' + (gstAmtInFloor * a / b)
@@ -58,7 +58,7 @@ function checking() {
     else {
         demo.innerText = 'Invalid Promo Code'
         demo.style.color = 'Red'
-        disPercen.innerText = "(0%)"
+        disPercen.innerText = "Discount (0%)"
         disVal.innerText = 'Rs.00'
         // befgst.innerText = 'Rs.' + userInputAmt.value
         // aftgst.innerText = 'Rs.' + amtgst.value
@@ -75,27 +75,35 @@ function checking() {
     // }
     befgst.innerText = 'Rs.' + userInputAmt.value
     aftgst.innerText = 'Rs.' + gstAmtInFloor
-    aftdis.innerText = 'Rs.' + (gstAmtInFloor - (gstAmtInFloor * a / b))
-    aftdis2.innerText = 'Rs.' + (gstAmtInFloor - (gstAmtInFloor * a / b))
+    aftdis.innerText = 'Rs.' + Math.round((gstAmtInFloor - (gstAmtInFloor * a / b)))
+    aftdis2.innerText = 'Rs.' + Math.round((gstAmtInFloor - (gstAmtInFloor * a / b)))
+    // aftdis.innerText = 'Rs.' + (gstAmtInFloor - (gstAmtInFloor * a / b))
+    // aftdis2.innerText = 'Rs.' + (gstAmtInFloor - (gstAmtInFloor * a / b))
 
 }
 
 userInputAmt.addEventListener('input', () => {
     amtgst.value = Number(userInputAmt.value) + (userInputAmt.value * 18 / 100)
-    gstAmtInFloor = Math.floor(amtgst.value)
+    gstAmtInFloor = amtgst.value
+    pc.addEventListener('input',()=>{
+        if (pc.value == '') {
+            check.setAttribute('disabled', '')
+            check.style.opacity = '.7'
+        }
+        else {
+            check.removeAttribute('disabled')
+            check.style.opacity = '1'
+        }
+    })
     if (userInputAmt.value < 500) {
-        check.setAttribute('disabled', '')
-        pc.setAttribute('disabled', '')
         befgst.innerText = 'Rs.' + userInputAmt.value
         aftgst.innerText = 'Rs.' + gstAmtInFloor
         aftdis.innerText = 'Rs.' + gstAmtInFloor
         aftdis2.innerText = 'Rs.' + gstAmtInFloor
-        disPercen.innerText = "(0%)"
+        disPercen.innerText = "Discount (0%)"
         disVal.innerText = 'Rs.' + "00"
     }
     if (userInputAmt.value >= 500 || userInputAmt.value >= 1000 || userInputAmt.value >= 1500) {
-        check.removeAttribute('disabled')
-        pc.removeAttribute('disabled')
         check.addEventListener('click', () => {
             val = pc.value.toUpperCase().split(' ').join('')
             checking()

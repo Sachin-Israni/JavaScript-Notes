@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter Amount" id="enterAmt">
+    <input type="text" placeholder="Enter Promo Code" disabled id="enterPromo">
+    <input type="button" value="Check" disabled id="check">
+
+
+    <script>
+        let enterAmt = document.getElementById('enterAmt')
+        let enterPromo = document.getElementById('enterPromo')
+        let check = document.getElementById('check')
+
+        enterAmt.addEventListener('input', () => {
+            if (enterAmt.value < 500) {
+                enterPromo.setAttribute('disabled', '')
+                check.setAttribute('disabled', '')
+            }
+            
+            if (enterAmt.value >= 500 || enterAmt.value >= 1000 || enterAmt.value >= 1500) {
+                enterPromo.removeAttribute('disabled')
+                check.removeAttribute('disabled')
+            }
+        })
+
+    </script>
+</body>
+
+</html>

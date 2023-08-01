@@ -29,9 +29,8 @@ body{
 }
 input{
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 20px;
     border: 2px solid burlywood;
-    background-color: aquamarine;
 }
 .name {
     display: flex;
@@ -89,7 +88,8 @@ input{
 
 .promo {
     padding: 20px;
-    border-left: 1px solid;
+    border-left: 1px solid rgb(177, 177, 177);
+    height: 100vh;
 }
 .promocode{
     padding: 20px 0;
@@ -121,11 +121,21 @@ input{
 }
 #btn{
     margin: 10px;
-    padding: 5px 24px;
+    padding: 10px 34px;
     background-color: rgb(243, 117, 117);
     border: none;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+#check{
+    margin: 10px;
+    padding: 12px 28px;
+    background-color: rgb(243, 117, 117);
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    opacity: .7;
 }
 .purple{
     background-color: rgb(173, 128, 216);
