@@ -5,32 +5,34 @@
 // let keyd = document.getElementById('keyd')
 // let keyu = document.getElementById('keyu')
 
-// color2.addEventListener('input', () => {
-//     document.body.style.backgroundColor = color2.value
-// })
-// input.addEventListener('input', () => {             // not working
-//     inset.innerText = input.value
-//     // input.style.backgroundColor = 'purple'
-// })
-// input.addEventListener('change', () => {
-//     change.innerText = input.value
-// })
-// input.addEventListener('blur', () => {
-//     input.style.backgroundColor = 'yellow'
-// })
-// input.addEventListener('focus', () => {
-//     input.style.backgroundColor = 'red'
-// })
-// input.addEventListener('keypress', () => {
-//     keyp.innerText = input.value
-// })
-// input.addEventListener('keydown', () => {
-//     keyd.innerText = input.value
-// })
-// input.addEventListener('keyup', () => {             // not working
-//     // input.style.backgroundColor = 'purple'
-//     keyu.innerText = input.value
-// })
+color2.addEventListener('input', () => {
+    document.body.style.backgroundColor = color2.value
+    color.value = color2.value
+    demo.innerText = ''
+})
+input.addEventListener('input', () => {             // not working
+    inset.innerText = input.value
+    // input.style.backgroundColor = 'purple'
+})
+input.addEventListener('change', () => {
+    change.innerText = input.value
+})
+input.addEventListener('blur', () => {
+    input.style.backgroundColor = 'yellow'
+})
+input.addEventListener('focus', () => {
+    input.style.backgroundColor = 'red'
+})
+input.addEventListener('keypress', () => {
+    keyp.innerText = input.value
+})
+input.addEventListener('keydown', () => {
+    keyd.innerText = input.value
+})
+input.addEventListener('keyup', () => {             // not working
+    // input.style.backgroundColor = 'purple'
+    keyu.innerText = input.value
+})
 
 
 
@@ -59,18 +61,39 @@ console.log(arr2);
 
 // ----------------- color changer with color name and rgb correct format 
 
-input.addEventListener('change', () => {
-    x = input.value
-    console.log(x);
+color.addEventListener('change', () => {
+    let x = color.value
+    
     document.body.style.backgroundColor = x
-    console.log(document.body.style.backgroundColor);
+
     if (document.body.style.backgroundColor == x) {
         document.body.style.backgroundColor = x
         demo.innerText = ''
     }
+
+    else if (x.includes('#')) {
+        rgbConverter(x)
+        function rgbConverter(y) {
+            r = parseInt(x.slice(1, 3), 16)
+            g = parseInt(x.slice(3, 5), 16)
+            b = parseInt(x.slice(5, 7), 16)
+            y = 'rgb(' + r + ', ' + g + ', ' + b + ')'
+            document.body.style.backgroundColor = y
+            console.log(y);
+            demo.innerText = ''
+        }
+    }
+
     else {
         document.body.style.backgroundColor = 'white'
         demo.innerText = 'Input color incorrect'
     }
 
 })
+
+
+// --------------- Color changing background , array unfalt  and key events
+console.log(parseInt('ffff'.slice(0, 2), 16));
+console.log(parseInt('ff33'.slice(2, 4), 16));
+console.log(parseInt('ff33ee'.slice(4, 6), 16));
+console.log();
