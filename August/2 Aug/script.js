@@ -1,16 +1,16 @@
-// let input = document.getElementById('input')
-// let inp = document.getElementById('in')
-// let change = document.getElementById('change')
-// let keyp = document.getElementById('keyp')
-// let keyd = document.getElementById('keyd')
-// let keyu = document.getElementById('keyu')
+let input = document.getElementById('input')
+let inp = document.getElementById('in')
+let change = document.getElementById('change')
+let keyp = document.getElementById('keyp')
+let keyd = document.getElementById('keyd')
+let keyu = document.getElementById('keyu')
 
 color2.addEventListener('input', () => {
     document.body.style.backgroundColor = color2.value
     color.value = color2.value
     demo.innerText = ''
 })
-input.addEventListener('input', () => {             // not working
+input.addEventListener('input', () => {
     inset.innerText = input.value
     // input.style.backgroundColor = 'purple'
 })
@@ -29,7 +29,7 @@ input.addEventListener('keypress', () => {
 input.addEventListener('keydown', () => {
     keyd.innerText = input.value
 })
-input.addEventListener('keyup', () => {             // not working
+input.addEventListener('keyup', () => {
     // input.style.backgroundColor = 'purple'
     keyu.innerText = input.value
 })
@@ -63,7 +63,7 @@ console.log(arr2);
 
 color.addEventListener('change', () => {
     let x = color.value
-    
+
     document.body.style.backgroundColor = x
 
     if (document.body.style.backgroundColor == x) {
@@ -71,7 +71,7 @@ color.addEventListener('change', () => {
         demo.innerText = ''
     }
 
-    else if (x.includes('#')) {
+    else if (x.startsWith('#')) {
         rgbConverter(x)
         function rgbConverter(y) {
             r = parseInt(x.slice(1, 3), 16)
@@ -81,6 +81,10 @@ color.addEventListener('change', () => {
             document.body.style.backgroundColor = y
             console.log(y);
             demo.innerText = ''
+            if (y.includes('NaN')) {
+                document.body.style.backgroundColor = 'white'
+                demo.innerText = 'Input color incorrect'
+            }
         }
     }
 
@@ -97,3 +101,26 @@ console.log(parseInt('ffff'.slice(0, 2), 16));
 console.log(parseInt('ff33'.slice(2, 4), 16));
 console.log(parseInt('ff33ee'.slice(4, 6), 16));
 console.log();
+window.addEventListener('wheel', (e) => {
+    if (e.deltaY < 0) {
+        console.log('Scroll Up');
+        // console.log(e.deltaY);
+    }
+    else {
+        console.log('Scroll Down');
+        // console.log(e.deltaX);
+    }
+})
+// window.addEventListener('scroll',()=>{
+//     console.log('Scrolling');
+// })
+
+window.addEventListener('click', (e) => {
+    console.log(e.clientX);
+    console.log(e.clientY);
+    // e.preventdefault();
+})
+
+// client.addEventListener('click', () => {
+//     window.scroll(0,0)
+// })

@@ -1,6 +1,8 @@
 let one = document.getElementsByClassName('one')
 let sub = document.getElementById('submit')
 let timer = document.getElementById('timer')
+let main = document.getElementsByClassName('main')[0]
+// console.log(main);
 
 sec = 30
 setInterval(() => {
@@ -10,7 +12,7 @@ setInterval(() => {
         timer.innerText = 0
     }
     stop()
-}, 100)
+}, 1000)
 
 let newArr = Array.from(one)
 newArr.forEach((e) => {
@@ -24,7 +26,7 @@ newArr.forEach((e) => {
 
 sub.addEventListener('click', check)
 function check() {
-
+    main.classList.add('main2')
     if (document.querySelector('.hoverColor').innerText == '(a) Hydrogen gas and iron chloride are produced.') {
         document.querySelector('.hoverColor').style.backgroundColor = 'aqua'
         timer.innerText = 30 + sec - 30;
@@ -41,14 +43,16 @@ function check() {
             }
         })
         document.querySelector('.hoverColor').style.backgroundColor = 'red'
-        
+
 
         sub.removeEventListener('click', check)
     }
 }
 
-function stop(){
-    if(sec==15){
-        console.log('Hello');
-    }   
+function stop() {
+    if (main.classList.contains('main2')) {
+        // console.log('Hello');
+        clearInterval()
+        sec = (30 + sec) - sec
+    }
 }
