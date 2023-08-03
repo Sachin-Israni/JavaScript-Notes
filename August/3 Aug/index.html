@@ -12,6 +12,36 @@
         a {
             text-decoration: none;
         }
+        .main{
+            height: 400px ;
+            width: 400px ;
+            overflow: hidden;
+            position: relative;
+            margin: 10px;
+            border-radius: 20px;
+            margin: auto;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            transition: 0.3s;
+            border-radius: 20px;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+        .btn button{
+            padding: 10px ;
+            margin: 10px;
+            border: none ;
+            background-color: goldenrod;
+            border-radius: 10px;
+            font-size: 20px;
+            color:black;
+        }
     </style>
     <title>Real website Practice</title>
 </head>
@@ -164,6 +194,19 @@
         in expedita quod tempora. Amet saepe explicabo et dolorum maxime voluptatem suscipit nostrum cumque ad neque
         temporibus, sapiente consectetur dolor. Nisi dolore voluptatibus alias consectetur exercitationem nobis amet
         sint ipsa illo, facere error </p>
+
+        <div class="main">
+
+            <img src="aksh.jpg" alt="" class="slide"><img src="alia.webp" alt="" class="slide"><img src="deepika.jpg" alt=""
+                class="slide"><img src="katrina.jpg" alt="" class="slide"><img src="sm.jpg" alt="" class="slide">
+        </div>
+        <div class="btn">
+
+            <button onclick="goPre()">Go Pre</button>
+            <button onclick="goNex()">Go Next</button>
+        </div>
+
+
     <p> accusamus distinctio cum ab deserunt et modi doloremque, temporibus nulla,
         molestiae reiciendis aliquid assumenda autem quos. Ullam dolorem eveniet vero, voluptates eligendi, neque minima
         nemo excepturi, corporis odio aliquam. Accusantium magnam dolorum amet deleniti, reiciendis iusto ducimus
@@ -199,7 +242,10 @@
         <a href="#top">Top</a>
     </button>
     <button id="scrollToTopButton">Top</button>
-    <a href="#" onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0; event.preventDefault();">Top</a>
+    <a href="#"
+        onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0; event.preventDefault();">Top</a>
+
+    
     <script src="script.js"></script>
 </body>
 
