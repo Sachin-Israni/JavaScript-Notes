@@ -2,6 +2,9 @@ let one = document.getElementsByClassName('one')
 let sub = document.getElementById('submit')
 let timer = document.getElementById('timer')
 let main = document.getElementsByClassName('main')[0]
+let next = document.getElementById('next')
+let answer = document.querySelector('.answer')
+console.log(answer.innerText);
 // console.log(main);
 
 sec = 30
@@ -18,7 +21,7 @@ let newArr = Array.from(one)
 newArr.forEach((e) => {
     e.addEventListener('click', () => {
 
-        if (sub.hasAttribute('disabled')) {
+        if (sub.innerText == 'Next') {
             e.removeEventListener('click')
         }
         document.querySelector('.hoverColor')?.classList.remove('hoverColor')
@@ -26,21 +29,19 @@ newArr.forEach((e) => {
 
     })
 })
-
+console.log(newArr.filter(e => e.innerText.startsWith('(a)')));
 sub.addEventListener('click', check)
 function check() {
     // main.classList.add('main2')
-    if (document.querySelector('.hoverColor').innerText == '(a) Hydrogen gas and iron chloride are produced.') {
+    // if (document.querySelector('.hoverColor').innerText == '(a)') {
+    if (document.querySelector('.hoverColor').innerText == newArr.filter(e => e.innerText.startsWith(answer.innerText))) {
         document.querySelector('.hoverColor').style.backgroundColor = 'greenyellow'
-        timer.innerText = 30 + sec - 30;
-        sec = timer.innerText
-        console.log(timer.innerText);
-        console.log(sec);
     }
     else {
         let a = document.querySelectorAll('.one')
         Array.from(a).forEach((e) => {
-            if (e.innerText == '(a) Hydrogen gas and iron chloride are produced.') {
+            console.log(e.innerText.includes(answer.innerText));
+            if (e.innerText.includes(answer.innerText)) {
                 e.style.backgroundColor = 'greenyellow'
             }
         })
@@ -49,5 +50,13 @@ function check() {
 
     sub.removeEventListener('click', check)
     clearInterval(set)
-    sub.setAttribute('disabled', '')
+    sub.classList.add('none')
+    next.classList.remove('none')
 }
+
+next.addEventListener('click', () => {
+    sub.classList.remove('none')
+    next.classList.add('none')
+})
+// i=0;index
+// i++

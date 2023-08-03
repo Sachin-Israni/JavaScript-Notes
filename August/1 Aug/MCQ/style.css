@@ -40,12 +40,15 @@ h2 {
     cursor: pointer;
 }
 
-#submit {
+.submit {
     padding: 10px 30px;
     margin: 10px;
     border: none;
     background-color: goldenrod;
     border-radius: 10px;
+}
+.none{
+    display: none;
 }
 
 #timer {
