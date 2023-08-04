@@ -13,9 +13,9 @@ scrollToTopButton.addEventListener('click', () => {
 // const body = document.querySelector('body')
 
 // body.addEventListener('keydown', function (event) {
-    // console.log('Key pressed:', event.key);
-    // body.innerText += event.key
-    // console.log(event.key);
+// console.log('Key pressed:', event.key);
+// body.innerText += event.key
+// console.log(event.key);
 // });
 
 // document.addEventListener('keyup', function (event) {
@@ -53,7 +53,8 @@ scrollToTopButton.addEventListener('click', () => {
 // });
 
 
-const slide = document.querySelectorAll(".slide");
+let slide = document.querySelectorAll(".slide");
+
 var count = 0;
 slide.forEach((value, index) => {
     value.style.left = `${index * 100}%`
@@ -68,11 +69,11 @@ function goPre() {
 function goNex() {
     if (count < (slide.length - 1)) {
         count++;
+        slide.forEach(e => {
+            e.classList.add('trans')
+            e.classList.remove('trans1')
+        })
         slideImage()
-        if (count == slide.length - 1) {
-            count = -1
-            console.log(count);
-        }
     }
 }
 
@@ -80,4 +81,15 @@ function slideImage() {
     slide.forEach((value) => {
         value.style.transform = `translateX(-${count * 100}%)`
     })
+    if (count == 0) {
+        slide.forEach(e => {
+            e.classList.remove('trans')
+            e.classList.add('trans1')
+        })
+        // trans.style.transition='none'
+    }
+    if (count == 4) {
+        count = -1
+        console.log(count);
+    }
 }

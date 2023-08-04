@@ -8,7 +8,7 @@
         * {
             scroll-behavior: smooth;
         }
-
+        
         a {
             text-decoration: none;
         }
@@ -26,8 +26,14 @@
             width: 100%;
             object-fit: cover;
             position: absolute;
-            transition: 0.3s;
             border-radius: 20px;
+            /* transition: 0.3s; */
+        }
+        .trans{
+            transition: 0.3s;
+        }
+        .trans1{
+            transition: none;
         }
         .btn{
             display: flex;
@@ -197,7 +203,7 @@
 
         <div class="main">
 
-            <img src="aksh.jpg" alt="" class="slide">
+            <img src="aksh.jpg" alt="" class="slide" id="trans">
             <img src="alia.webp" alt="" class="slide">
             <img src="deepika.jpg" alt=""class="slide">
             <img src="katrina.jpg" alt="" class="slide">
