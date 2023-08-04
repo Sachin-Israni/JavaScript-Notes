@@ -16,33 +16,33 @@
         const imageInput = document.getElementById('imageInput');
         const imagePreview = document.getElementById('imagePreview');
 
-        imageInput.addEventListener('change', () => {
-            const fr = new FileReader()
-            fr.readAsDataURL(imageInput.files[0])
-            fr.addEventListener('load', () => {
-                const url = fr.result
-                const img = new Image()
-                img.src = url
-                imagePreview.append(img)
-            })
-        })
-        // imageInput.addEventListener('change', function (event) {
-        //     const file = event.target.files[0];
-        //     console.log(file.type);
-        //     console.log(file.size);
-        //     console.log(file);
-        //     if (file) {
-        //         if (file.size > 1 * 1024 * 1024) { // Maximum size: 2 MB
-        //             alert('File size exceeds the limit of 1 MB.');
-        //             imagePreview.innerHTML = ''
-        //             return;
-        //         }
+        // imageInput.addEventListener('change', () => {
+        //     const fr = new FileReader()
+        //     fr.readAsDataURL(imageInput.files[0])
+        //     fr.addEventListener('load', () => {
+        //         const url = fr.result
+        //         const img = new Image()
+        //         img.src = url
+        //         imagePreview.append(img)
+        //     })
+        // })
+        imageInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            console.log(file.type);
+            console.log(file.size);
+            console.log(file);
+            if (file) {
+                if (file.size > 1 * 1024 * 1024) { // Maximum size: 2 MB
+                    alert('File size exceeds the limit of 1 MB.');
+                    // imagePreview.innerHTML = ''
+                    return;
+                }
 
-        //         if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
-        //             alert('Please choose reader JPG or PNG image.');
-        //             imagePreview.innerHTML = ''
-        //             return;
-        //         }
+                if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
+                    alert('Please choose reader JPG or PNG image.');
+                    // imagePreview.innerHTML = ''
+                    return;
+                }
 
         //---------------------------
 
@@ -59,17 +59,17 @@
 
         //----------------------------
 
-        // reader = new FileReader()
-        // reader.onload = function () {
-        //     const img = document.createElement('img')
-        //     img.src = reader.result
-        //     console.log(img);
-        //     console.log(reader.result);
-        //     img.style.maxWidth = '40%';
-        //     imagePreview.innerHTML = ''
-        //     imagePreview.appendChild(img)
-        // }
-        // reader.readAsDataURL(file)
+        reader = new FileReader()
+        reader.onload = function () {
+            const img = document.createElement('img')
+            img.src = reader.result
+            console.log(img);
+            console.log(reader.result);
+            img.style.maxWidth = '40%';
+            // imagePreview.innerHTML = ''
+            imagePreview.appendChild(img)
+        }
+        reader.readAsDataURL(file)
 
         //---------------------
 
@@ -90,8 +90,8 @@
         //         imagePreview.appendChild(img);
         //     };
         //     reader.readAsDataURL(file);
-        // }
-        // });
+        }
+        });
     </script>
 </body>
 
