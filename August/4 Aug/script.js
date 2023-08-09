@@ -72,15 +72,29 @@ console.log(output);
 
 
 
-// let send = document.getElementById('send')
-// let main = document.getElementsByClassName('pParent')[0]
+let send = document.getElementById('send')
+let send2 = document.getElementById('send2')
+let main = document.getElementsByClassName('pParent')[0]
+let main2 = document.getElementsByClassName('pParent2')[0]
 
-// let input = document.getElementById('input')
-// send.addEventListener('click',()=> {
-//     main.innerHTML+=`<div class='main2'><p>${input.value}</p><div>`
-//     input.value=''
-// })      
+let input = document.getElementById('input')
+let input2 = document.getElementById('input2')
+send.addEventListener('click',()=> {
+    main.innerHTML+=`<div class='main2'><p>${input.value}</p><div>`
+    main2.innerHTML+=`<div class='main2 align-left'><p>${input.value}</p><div>`
+    input.value=''
+})      
 
+send2.addEventListener('click',()=> {
+    if(input2.value==''){
+
+    }
+    else{
+        main2.innerHTML+=`<div class='main2'><p>${input2.value}</p><div>`
+        main.innerHTML+=`<div class='main2 align-left'><p>${input2.value}</p><div>`
+        input2.value=''
+    }
+})      
 
 
 

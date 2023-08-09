@@ -37,18 +37,18 @@
             height: 100%;
         }
 
-        .bgc {
+        .bgc,.bgc2 {
             padding: 15px;
             background-color: azure;
             width: 100%;
         }
 
-        .pParent {
+        .pParent,.pParent2 {
             padding-inline: 20px;
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: end; 
+            /* justify-content: end;  */
             overflow-y: scroll;
         }
 
@@ -64,6 +64,10 @@
             border-radius: 5px;
             background-color: burlywood;
             margin-block: 5px;
+        }
+        .align-left{
+            display: flex;
+            justify-content: start;
         }
     </style>
     <title>Chat Box</title>
@@ -100,7 +104,11 @@
         </div>
     </div> -->
     <div class="main flexEnd">
+
+
+        
         <div id="firstInput">
+        
             <div class="pParent">
                 <!-- <div class="main2"><p>1244</p></div>
                 <div class="main2"><p>sachin</p></div>
@@ -140,18 +148,26 @@
                 <p>Sachin</p>
                 <p>Sachin</p> -->
             </div>
+
             <div class="bgc">
                 <input type="text" id="input">
                 <button id="send"><i class="bi bi-send"></i></button>
             </div>
+
         </div>
+
+
+
         <div id="secInput">
-            <div class="pParent">
+
+            <div class="pParent2">
             </div>
-            <div class="bgc">
-                <input type="text" id="input">
-                <button id="send"><i class="bi bi-send"></i></button>
+
+            <div class="bgc2">
+                <input type="text" id="input2">
+                <button id="send2"><i class="bi bi-send"></i></button>
             </div>
+
         </div>
 
     </div>
