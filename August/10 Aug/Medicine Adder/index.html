@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: #fff;
+            display: flex;
+            /* height: 100vh; */
+            justify-content: start;
+            padding: 10px;
+        }
+
+        #demo {
+            margin: 10px 5px;
+        }
+
+        #popUp {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: tomato;
+            font-size: 13px;
+            border-radius: 10px;
+        }
+
+        #form {
+            /* display: none; */
+            margin-block: 15px;
+            background-color: #238698;
+            padding: 20px;
+            border-radius: 20px;
+            width: 80%;
+        }
+
+        input,
+        select {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        table{
+            border: 2px solid grey;
+            border-collapse: collapse;
+            
+        }
+        th{
+            color: green;
+        }
+        th,tr,td{
+            border: 2px solid grey;
+            padding: 10px;
+        }
+    </style>
+    <title>Medicine Adder</title>
+</head>
+
+<body>
+    <div id="main">
+
+        <button id="popUp">ADD MEDICINE</button>
+        <p id="demo"></p>
+
+        <div class="model">
+            <!-- <fieldset> -->
+
+            <form action="#" id="form">
+                <label for="medName">Medicine</label> <br>
+                <input type="text" name="Medicine" id="medName"> <br>
+
+                <label for="rack">Rack</label> <br>
+                <select name="" id="rack">
+                    <option value="Hi">Hi</option>
+                    <option value="Hello">Hello</option>
+                    <option value="Hi">Hi</option>
+                    <option value="Hi">Hi</option>
+                    <option value="Hi">Hi</option>
+                </select> <br>
+
+                <label for="quan">Quantity</label> <br>
+                <input type="number" name="Quantity" id="quan" min="0"> <br>
+
+                <label for="exp">Expiry By</label> <br>
+                <input type="radio" name="exp" id="date"> <label for="date">By date</label>
+                <input type="radio" name="exp" id="days"> <label for="days">By days</label> <br>
+
+                <div class="color">
+
+                    <label for="dateIn">Date</label>
+                    <input type="date" id="dateIn"> <br>
+                    <label for="manu">Manufacture Date</label>
+                    <input type="date" id="manu"><br>
+                    <label for="day">Days</label>
+                    <input type="number" id="day" min="0"> <br>
+
+                </div>
+
+                <label for="batch">Bacth Number</label> <br>
+                <!-- <input type="text" disabled> <br> -->
+                <select name="" id="batch">
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="A3">A3</option>
+                </select>
+
+                <button id="addDetails">ADD MEDICINE</button>
+
+            </form>
+            <!-- </fieldset> -->
+
+        </div>
+
+        <table id="table">
+            <tr>
+                <th>Medicine</th>
+                <th>Quantity</th>
+                <th>Expiry Date</th>
+                <th>Rack</th>
+                <th>Batch</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
