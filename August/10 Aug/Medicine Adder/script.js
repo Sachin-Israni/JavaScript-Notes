@@ -61,7 +61,7 @@ const mainDate = date_val >= 10 ? date_val : `0${date_val}`
 const b = a.getFullYear() + '-' + month + '-' + mainDate
 dateIn.min = b
 var as;
-dateIn.addEventListener('blur', () => {
+dateIn.addEventListener('focusout', () => {
     if (dateIn.value < b) {
         alert('Enter Valid Date')
     }
@@ -143,12 +143,13 @@ const adding = (event) => {
     // })
     // let mainvaa = vaa.filter(e=>e==rack.value)
 
-    Array.from(input).forEach((e) => {
-        if(e.value==''){
-            alert("Please fill input fields")
-        }
-    
-    })
+    // Array.from(input).forEach((e) => {
+    //     if (e.value == '') {
+    //         alert("Please fill input fields")
+    //     }
+
+    // })
+
     add = 'add' + i
     table.innerHTML += `<tr id="${add}">
     <td>${medName.value}</td>

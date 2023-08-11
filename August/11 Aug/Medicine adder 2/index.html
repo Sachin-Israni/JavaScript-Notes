@@ -21,25 +21,33 @@
             padding: 10px;
         }
 
-        #demo {
-            margin: 10px 5px;
+        #demo1,#demo2,#demo3 {
+            position: absolute;
+            top: -7%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transition: .3s all;
+            font-size: 20px;
+            padding: 20px;
+            font-family: monospace;
+            /* background-color: rgba(0, 225, 0, .5); */
+            border-radius: 10px;
         }
 
         #popUp {
             margin-top: 20px;
             padding: 10px;
-            background-color: #86cece;
+            background-color: rgb(47, 218, 218);
+            border: none;
             font-size: 13px;
             border-radius: 10px;
         }
 
         #form {
-            /* display: none; */
             margin-block: 15px;
-            background-color: #238698;
+            background-color: rgb(96, 21, 167);
             padding: 20px;
             border-radius: 20px;
-            /* width: 80%; */
         }
 
         input,
@@ -57,7 +65,7 @@
         table {
             border: 2px solid grey;
             border-collapse: collapse;
-
+            margin-top: 20px;
         }
 
         th {
@@ -79,6 +87,14 @@
             color: red;
         }
 
+        .edit {
+            padding: 2px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(138, 255, 140);
+            color: green;
+        }
+
         #date,
         #days,
         #addDetails {
@@ -95,14 +111,18 @@
             display: none;
         }
     </style>
-    <title>Medicine Adder</title>
+
+    <title>Medicine Adder 2</title>
 </head>
 
 <body>
+
     <div id="main">
 
         <button id="popUp">ADD MEDICINE</button>
-        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
 
         <div class="model">
             <!-- <fieldset> -->
@@ -111,26 +131,27 @@
 
                 <!-- Medicine Name -->
                 <label for="medName">Medicine</label> <br>
-                <input type="text" name="Medicine" id="medName" required placeholder="Enter Medicine Name"> <br>
+                <input type="text" name="Medicine" id="medName"  placeholder="Enter Medicine Name"> <br>
 
                 <!-- Rack id and num -->
                 <label for="rack">Rack</label> <br>
-                <select name="" id="rack">
+                <select name="" id="rack" >
+                    <option value=0 disabled>Select</option>
                 </select> <br>
 
                 <!-- Quantity -->
                 <label for="quan">Quantity</label> <br>
-                <input type="number" name="Quantity" id="quan" min="0" required> <br>
+                <input type="number" name="Quantity" id="quan" placeholder="Select or enter quantity"> <br>
 
                 <!-- Expiry -->
                 <label for="exp">Expiry By</label> <br>
 
                 <!-- Date -->
-                <input type="radio" name="exp" id="date"> <label for="date" required style="font-size: 17px;">By
+                <input type="radio" name="exp" id="date"> <label for="date"  style="font-size: 17px;">By
                     date</label>
 
                 <!-- Days -->
-                <input type="radio" name="exp" id="days"> <label for="days" required style="font-size: 17px;">By
+                <input type="radio" name="exp" id="days"> <label for="days"  style="font-size: 17px;">By
                     days</label> <br>
 
                 <div class="color">
@@ -139,7 +160,7 @@
                     <div id="forDate">
 
                         <label for="dateIn">Date</label>
-                        <input type="date" id="dateIn" required min=""> <br>
+                        <input type="date" id="dateIn"  min=""> <br>
 
                     </div>
 
@@ -147,9 +168,9 @@
                     <div id="forManu">
 
                         <label for="manu">Manufacture Date</label>
-                        <input type="date" id="manu" required><br>
+                        <input type="date" id="manu"><br>
                         <label for="day">Days</label>
-                        <input type="number" id="day" min="0" required> <br>
+                        <input type="number" id="Aday" min="0" > <br>
 
                     </div>
                 </div>
@@ -166,6 +187,7 @@
                 </select> -->
 
                 <input type="submit" id="addDetails" value="ADD MEDICINE">
+                <input type="button" style="width: initial;" id="can" value="CANCEL">
                 <!-- <button id="addDetails">ADD MEDICINE</button> -->
                 <!-- <label for="btn">B</label> -->
 
@@ -183,12 +205,14 @@
                 <th>Rack</th>
                 <th>Batch</th>
                 <th>Delete</th>
+                <!-- <th><button id="ra">remove all</button></th> -->
             </tr>
 
         </table>
 
     </div>
-
+    <!-- <div id="asd"></div>
+    <input type="text" id="inp"> -->
     <script src="script.js"></script>
 </body>
 
