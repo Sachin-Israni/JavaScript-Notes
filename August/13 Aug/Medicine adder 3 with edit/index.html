@@ -24,7 +24,7 @@
         #demo1,
         #demo2,
         #demo3 {
-            position: absolute;
+            position: fixed;
             top: -7%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -131,7 +131,6 @@
         <p id="demo3"></p>
 
         <div class="model">
-            <!-- <fieldset> -->
 
             <form action="#" id="form">
 
@@ -157,7 +156,7 @@
                     date</label>
 
                 <!-- Days -->
-                <input type="radio" name="exp" id="days"> <label for="days" style="font-size: 17px;">By
+                <input type="radio" name="dayss" id="days"> <label for="days" style="font-size: 17px;">By
                     days</label> <br>
 
                 <div class="color">
@@ -166,7 +165,7 @@
                     <div id="forDate">
 
                         <label for="dateIn">Date</label>
-                        <input type="date" id="dateIn" min=""> <br>
+                        <input type="date" id="dateIn" min="" name="expDate"> <br>
 
                     </div>
 
@@ -174,9 +173,9 @@
                     <div id="forManu">
 
                         <label for="manu">Manufacture Date</label>
-                        <input type="date" id="manu"><br>
+                        <input type="date" id="manu" name="manufacture"><br>
                         <label for="day">Days</label>
-                        <input type="number" id="Aday" min="0"> <br>
+                        <input type="number" id="day" min="0" name="daysAftManu"> <br>
 
                     </div>
                 </div>
@@ -184,22 +183,16 @@
                 <!-- Batch number using the value of rack option -->
 
                 <label for="batch">Bacth Number</label> <br>
-                <input type="text" id="bat" disabled value="A1"> <br>
+                <input type="text" id="bat" disabled value="A1" name="batch1"> <br>
 
-                <!-- <select name="" id="batch">
-                    <option value="A1">A1</option>
-                    <option value="A2">A2</option>
-                    <option value="A3">A3</option>
-                </select> -->
 
-                <input type="submit" id="addDetails" value="ADD MEDICINE">
-                <input type="button" id="upDetails" style="width: initial;" value="Update Medicine Details">
-                <input type="button" style="width: initial;" id="can" value="CANCEL">
-                <!-- <button id="addDetails">ADD MEDICINE</button> -->
-                <!-- <label for="btn">B</label> -->
+
+
+                <input type="submit" id="addDetails" value="ADD MEDICINE" name="submitBtn">
+                <input type="button" id="upDetails" style="width: initial;" name="updateBtn" value="Update Medicine Details">
+                <input type="button" style="width: initial; margin-left: 5px;" id="can" name="cancelBtn" value="CANCEL">
 
             </form>
-            <!-- </fieldset> -->
 
         </div>
 
@@ -212,14 +205,21 @@
                 <th>Rack</th>
                 <th>Batch</th>
                 <th>Delete/Edit</th>
-                <!-- <th><button id="ra">remove all</button></th> -->
             </tr>
+            
+            <!-- <tr id="add0">
+                <td>1212</td>
+                <td>1</td>
+                <td>2023-10-18</td>
+                <td>5</td>
+                <td>A5</td>
+                <td><button class="del">Del</button> <button class="edit">EDIT</button></td>
+            </tr> -->
 
         </table>
 
     </div>
-    <!-- <div id="asd"></div>
-    <input type="text" id="inp"> -->
+    
     <script src="script.js"></script>
 </body>
 
