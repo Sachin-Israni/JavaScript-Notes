@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #one {
+            width: 200px;
+            height: 500px;
+            background-color: red;
+        }
+
+        #two {
+            width: 100px;
+            height: 250px;
+            background-color: grey;
+        }
+
+        #three {
+            width: 50px;
+            height: 125px;
+            background-color: aqua;
+        }
+        #demo1{
+            color: black;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="one">
+        <div id="two">
+            <div id="three">
+                <input type="submit" id="sub" value="bmit">
+            </div>
+        </div>
+    </div>
+    <input type="text" id="txt">
+    <div id="demo1"></div>
+    <script>
+
+        one.addEventListener('click', (e) => {
+            console.log("one");
+            txt.value = 'asasa'
+        })
+        two.addEventListener('click', (e) => {
+            console.log("two");
+            // event.stopPropagation()
+            // // alert("alskjjd")
+            // three.addEventListener('click', (e) => {
+            //     console.log("three");
+            //     event.stopPropagation()
+            // })
+        })
+        
+        sub.addEventListener('click',()=>{
+            demo1.innertext = txt.value
+            console.log(demo1.innertext);
+            console.log(txt.value);
+
+        })
+
+        three.addEventListener('click', (e) => {
+            console.log("three");
+            // event.stopPropagation()
+        })
+
+    </script>
+</body>
+
+</html>
