@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trying Again</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            background-color: blueviolet;
+        }
+
+        #demo1,
+        #demo2,
+        #demo3 {
+            position: fixed;
+            top: -7%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: .3s all;
+            font-size: 20px;
+            padding: 20px;
+            font-family: monospace;
+            /* background-color: rgba(0, 225, 0, .5); */
+            border-radius: 10px;
+        }
+
+        #demo1 {
+            background-color: rgba(225, 0, 0, .5);
+        }
+
+        #demo2 {
+            background-color: rgba(0, 220, 0, .5);
+        }
+
+        #demo3 {
+            background-color: rgba(0, 0, 225, .5);
+        }
+
+        .btns {
+            background-color: blue;
+            width: fit-content;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            border: 4px solid #256392;
+            cursor: pointer;
+            font-size: 15px;
+            background-color: aqua;
+        }
+
+        #form1 {
+            position: absolute;
+            margin: 10px;
+            display: none;
+        }
+
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+            font-size: 18px;
+        }
+
+        form {
+            background-color: burlywood;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 5px 0;
+        }
+
+        #forDate,
+        #forManu {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <div class="btns">
+        <button onclick="m1add()">ADD MEDICINE</button>
+        <button onclick="m2record()">ADD RECORD</button>
+        <button onclick="m3outrecord()">ADD OUTRECORD</button>
+    </div>
+
+    <div id="model1">
+        <form id="form1" action="#">
+
+            <label for="med">Medicine</label>
+            <input type="text" id="med" name="f1med">
+
+            <label for="rack">Rack</label>
+            <select name="f1rack" id="rack">
+                <option value="0" disabled selected>Select</option>
+            </select>
+
+            <label for="Quantity">Quantity</label>
+            <input type="number" id="Quantity" name="f1quantity" min="0">
+
+            <label for="Expiry">Expiry By</label>
+            
+            <input type="radio" name="Expiry" id="f1date">
+            <label for="f1date" style="display: inline;">By Date</label>
+
+            <input type="radio" name="Expiry" id="f1day">
+            <label for="f1day" style="display: inline;">By Days</label>
+
+
+            <div id="forDate">
+
+                <label for="expdate">Date</label>
+                <input type="date" name="f1expdate" id="expdate" min="">
+
+            </div>
+
+            <div id="forManu">
+
+                <label for="manudate">Manufacture Date</label>
+                <input type="date" name="f1manudate" id="manudate">
+
+                <label for="days">Days</label>
+                <input type="number" name="f1days" id="days">
+
+            </div>
+
+            <label for="batch">Batch</label>
+            <input type="text" id="batch" name="f1batch" disabled>
+
+            <br><br>
+
+            <input type="submit" value="ADD MEDICINE" onclick="f1submit()">
+            <input type="button" value="CANCEL" onclick="cancel()">
+        </form>
+    </div>
+
+    <table>
+        <tr>
+            <th>Medicine Name</th>
+            <th>Quantity</th>
+            <th>Expiry Date</th>
+            <th>Rack</th>
+            <th>Batch</th>
+            <th>Delete/Edit</th>
+        </tr>
+        <tbody id="table1"></tbody>
+    </table>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
