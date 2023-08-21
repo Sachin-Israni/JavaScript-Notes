@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: black;
+            color: #fff;
+            display: flex;
+            /* height: 100vh; */
+            justify-content: start;
+            padding: 10px;
+        }
+
+        #demo1,
+        #demo2,
+        #demo3 {
+            position: fixed;
+            top: -7%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: .3s all;
+            font-size: 20px;
+            padding: 20px;
+            font-family: monospace;
+            /* background-color: rgba(0, 225, 0, .5); */
+            border-radius: 10px;
+        }
+
+        #popUp,
+        #record,
+        #outrecord {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgb(47, 218, 218);
+            border: none;
+            font-size: 13px;
+            border-radius: 10px;
+        }
+
+        form {
+            margin-block: 15px;
+            background-color: rgb(96, 21, 167);
+            padding: 20px;
+            border-radius: 20px;
+            display: none;
+        }
+
+        input,
+        select {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            width: 100%;
+            padding: 7px;
+        }
+
+        label {
+            font-size: 22px;
+        }
+
+        table {
+            border: 2px solid grey;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            color: green;
+        }
+
+        th,
+        tr,
+        td {
+            border: 2px solid grey;
+            padding: 10px;
+        }
+
+        .del {
+            padding: 2px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(255, 157, 157);
+            color: red;
+        }
+
+        .edit {
+            padding: 2px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(138, 255, 140);
+            color: green;
+        }
+
+        #date,
+        #days,
+        #addDetails {
+            width: initial;
+        }
+
+        .color {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #forDate,
+        #forManu
+        {
+            display: none;
+        }
+        #upDetails{
+            display:none;
+        }
+    </style>
+
+    <title>Medicine Adder</title>
+</head>
+
+<body>
+
+    <div id="main">
+
+        <button id="popUp">ADD MEDICINE</button>
+        <button id="record">ADD RECORD</button>
+        <button id="outrecord">ADD OUTRECORD</button>
+
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+
+        <div class="model">
+
+            <form action="#" id="form">
+
+                <!-- Medicine Name -->
+                <label for="medName">Medicine</label> <br>
+                <input type="text" name="Medicine" id="medName" placeholder="Enter Medicine Name"> <br>
+
+                <!-- Rack id and num -->
+                <label for="rack">Rack</label> <br>
+                <select name="" id="rack">
+                    <option value=0 disabled>Select</option>
+                </select> <br>
+
+                <!-- Quantity -->
+                <label for="quan">Quantity</label> <br>
+                <input type="number" name="Quantity" id="quan" placeholder="Select or enter quantity"> <br>
+
+                <!-- Expiry -->
+                <label for="exp">Expiry By</label> <br>
+
+                <!-- Date -->
+                <input type="radio" name="exp" id="date"> <label for="date" style="font-size: 17px;">By
+                    date</label>
+
+                <!-- Days -->
+                <input type="radio" name="exp" id="days"> <label for="days" style="font-size: 17px;">By
+                    days</label> <br>
+
+                <div class="color">
+
+                    <!-- Date Only -->
+                    <div id="forDate">
+
+                        <label for="dateIn">Date</label>
+                        <input type="date" id="dateIn" min="" name="expDate"> <br>
+
+                    </div>
+
+                    <!-- Manufacture and days only -->
+                    <div id="forManu">
+
+                        <label for="manu">Manufacture Date</label>
+                        <input type="date" id="manu" name="manufacture"><br>
+                        <label for="day">Days</label>
+                        <input type="number" id="day" min="0" name="daysAftManu"> <br>
+
+                    </div>
+                </div>
+
+                <!-- Batch number using the value of rack option -->
+
+                <label for="batch">Bacth Number</label> <br>
+                <input type="text" id="bat" disabled value="A1" name="batch1"> <br>
+
+
+
+
+                <input type="submit" id="addDetails" value="ADD MEDICINE" name="submitBtn">
+                <input type="button" id="upDetails" style="width: initial;" name="updateBtn" value="Update Medicine Details">
+                <input type="button" style="width: initial; margin-left: 5px;" id="can" name="cancelBtn" value="CANCEL">
+
+            </form>
+
+        </div>
+
+        <div class="model2">
+
+            <form action="#" id="form2">
+
+                <label for="f2med">Medicine</label>
+                <input type="text" id="f2med" name="f2medicine">
+
+                <div id="show"></div>
+
+                <label for="Slot">Slot</label>
+                <select name="f2slot" id="Slot">
+                    <option value="Slot1">Slot 1</option>
+                    <option value="Slot2">Slot 2</option>
+                    <option value="Slot3">Slot 3</option>
+                </select>
+
+                <label for="f2quan">Quantity</label>
+                <input type="text" id="f2quan" name="quanf2">
+
+                <input type="button" value="ADD RECORD" id="addrecordf2" style="width: initial;">
+                <input type="button" value="CANCEL" id="f2can" style="width: initial; margin-left: 5px;">
+            </form>
+
+        </div>
+
+        <table>
+
+            <tbody id="table">
+
+            <tr>
+                <th>Medicine</th>
+                <th>Quantity</th>
+                <th>Expiry Date</th>
+                <th>Rack</th>
+                <th>Batch</th>
+                <th>Delete/Edit</th>
+            </tr>
+
+            <!-- <tr>
+                <td>sachin</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>parth</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>karan</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>sahil</td>
+                <td>123</td>
+            </tr> -->
+            
+            </tbody>
+
+        </table>
+
+        <table>
+
+            <tbody id="table2">
+                
+            <tr>
+                <th>Medicine</th>
+                <th>Slot</th>
+                <th>Quantity</th>
+            </tr>
+            
+            </tbody>
+
+        </table>
+
+        <table>
+            
+            <tbody id="table3">
+
+            <tr>
+                <th>Medicine</th>
+                <th>Removed-Quantity</th>
+                <th>Purpose</th>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
