@@ -398,11 +398,21 @@ record.addEventListener('click', () => {
     form2.style.display = "block"
     form3.style.display = "none"
     f2med.focus()
+    form2.reset()
 })
 
-can.addEventListener('click', () => form.style.display = "none")
-f2can.addEventListener('click', () => form2.style.display = "none")
-f3can.addEventListener('click', () => form3.style.display = "none")
+can.addEventListener('click', () => {
+    form.style.display = "none"
+    form.reset()
+})
+f2can.addEventListener('click', () => {
+    form2.style.display = "none"
+    form2.reset()
+})
+f3can.addEventListener('click', () => {
+    form3.style.display = "none"
+    form3.reset()
+})
 
 let allData2 = []
 let data2med = []
@@ -443,52 +453,93 @@ addrecordf2.addEventListener('click', () => {
     let getobj = allDATA.filter(obj => obj.medicine.includes(med))
 
     let objget = getobj.filter(item => item.medicine == med)[0]
-    if (objget.quantity == 0) {
+
+    if (Slot.value == "Select") {
+        demo1.innerText = 'Please select slot'
+        demo1.style.top = '6%'
+        demo1.style.backgroundColor = "rgba(225, 0, 0, .5)"
+        timeOut(demo1)
+        Slot.focus()
+        return;
+    }
+    if (Number(objget.quantity) == 0) {
         demo1.innerText = `All ${med} meds are sold out`
         demo1.style.top = '6%'
         demo1.style.backgroundColor = "rgba(225, 0, 0, .5)"
         timeOut(demo1)
         form2.reset()
-        form2.style.display="none"
+        form2.style.display = "none"
         return;
     }
-    if (f2quan.value > objget.quantity) {
+    if (Number(f2quan.value) > Number(objget.quantity)) {
         demo1.innerText = "Please Enter Valid value"
         demo1.style.top = '6%'
         demo1.style.backgroundColor = "rgba(225, 0, 0, .5)"
         timeOut(demo1)
         f2quan.focus()
     }
-    if(f2quan.value <= objget.quantity) {
+    if (Number(f2quan.value) <= Number(objget.quantity)) {
         let recordObj = {}
 
+        if (data2med.includes(med)) {
+            if (true) {
+                let med = f2med.value.slice(0, f2med.value.indexOf('|')).trim()
+                let getobj = allDATA.filter(obj => obj.medicine.includes(med))
 
-        data2med.push(med)
-        table2.innerHTML += `<tr>
+                let objget = getobj.filter(item => item.medicine == med)[0]
+
+                objget.quantity = objget.quantity - f2quan.value
+
+                let maina = document.getElementById('table').children;
+                let maina2 = Array.from(maina).filter(ele => {
+                    if (ele.children[0].innerText == objget.medicine) {
+                        return ele.children[1].innerText = objget.quantity;
+                    }
+                })
+
+            }
+
+            let getobj = allData2.filter(obj => obj.medicine.includes(med))
+
+            let objget = getobj.filter(item => item.medicine == med)[0]
+            objget.quantity = Number(objget.quantity) + Number(f2quan.value)
+
+            let maina = document.getElementById('table2').children;
+            let maina2 = Array.from(maina).filter(ele => {
+                if (ele.children[0].innerText == objget.medicine) {
+                    return ele.children[2].innerText = objget.quantity;
+                }
+            })
+            form2.reset()
+            form2.style.display = "none"
+        }
+        else {
+
+            data2med.push(med)
+            table2.innerHTML += `<tr>
     <td>${med}</td>
     <td>${Slot.value}</td>
     <td>${f2quan.value}</td>
     </tr>`
-        //     console.log("i am else");
-        // }
 
-        recordObj.medicine = med
-        recordObj.slot = Slot.value
-        recordObj.quantity = f2quan.value
-        allData2.push(recordObj)
+            recordObj.medicine = med
+            recordObj.slot = Slot.value
+            recordObj.quantity = f2quan.value
+            allData2.push(recordObj)
 
-        // let cur = med
+            // let cur = med
+            objget.quantity = objget.quantity - f2quan.value
 
-        objget.quantity = objget.quantity - f2quan.value
+            let maina = document.getElementById('table').children;
+            let maina2 = Array.from(maina).filter(ele => {
+                if (ele.children[0].innerText == objget.medicine) {
+                    return ele.children[1].innerText = objget.quantity;
+                }
+            })
 
-        let maina = document.getElementById('table').children;
-        let maina2 = Array.from(maina).filter(ele => {
-            if (ele.children[0].innerText == objget.medicine) {
-                return ele.children[1].innerText = objget.quantity;
-            }
-        })
-        form2.reset()
-        form2.style.display = "none"
+            form2.reset()
+            form2.style.display = "none"
+        }
     }
     // console.log(allData2);
     // let sameName = allData2.filter(obj => obj.medicine.includes(med))
@@ -520,6 +571,7 @@ addrecordf2.addEventListener('click', () => {
 let allData3 = []
 let data3med = []
 f3med.addEventListener('input', () => {
+    form3.reset()
 
     showmain.innerHTML = ''
     data2med.forEach(item => {
@@ -591,4 +643,5 @@ outrecord.addEventListener('click', () => {
     form2.style.display = "none"
     form3.style.display = "block"
     f3med.focus()
+    form3.reset()
 })
